@@ -36,13 +36,10 @@
         <div class="container">
           <div class="header-bottom__inner">
             <div class="header-bottom__search">
-              <form class="header-bottom__form">
-                <input
-                  type="text"
-                  class="header-bottom__form-input"
-                  placeholder="Search"
-                />
-              </form>
+              <div class="header-bottom__search-wrraper">
+              <?php aws_get_search_form( true ); ?>
+              </div>
+             
               <div class="header-bottom__form-close">
                 <img src="<?php echo get_template_directory_uri()?>/assets/images/home/close_small.svg" alt="img" />
               </div>
@@ -57,11 +54,6 @@
                   'menu_class' => 'menu__list'
                 ])?>
               </div>
-          
-            <!-- <nav class="menu">
-             
-             
-            </nav> -->
 
             <div class="header-bottom__box">
               <div class="header-bottom__box-img">
@@ -80,9 +72,7 @@
                   <img src="<?php echo get_template_directory_uri()?>/assets/images/home/mobile-call.svg" alt="img">
                 </a>
               </div>
-            <!-- <div class="nav-icon">
-              <div class="nav-icon__middle"></div>
-            </div> -->
+           
           </div>
         </div>
       </div>

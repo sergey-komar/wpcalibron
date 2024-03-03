@@ -27,27 +27,27 @@
         <div class="measurements-block__right">
             <div class="measurements-block__content">
             <div class="measurements-block__category">
-                <a href="#" class="measurements-block__item">
+                <a href="<?php the_field('ssylka_na_kategoriyu_odin', 'options');?>" class="measurements-block__item">
                 <div class="measurements-block__item-title">Поверка</div>
-                <img src="./images/home/home-1.png" alt="img" class="measurements-block__item-img">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/home/home-1.png" alt="img" class="measurements-block__item-img">
                 </a>
-                <a href="#" class="measurements-block__item">
+                <a href="<?php the_field('ssylka_na_kategoriyu_dva', 'options');?>" class="measurements-block__item">
                 <div class="measurements-block__item-title">Калибровка</div>
-                <img src="./images/home/home-2.png" alt="img" class="measurements-block__item-img">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/home/home-2.png" alt="img" class="measurements-block__item-img">
                 </a>
             </div>
             <div class="measurements-block__category">
-                <a href="#" class="measurements-block__item">
+                <a href="<?php the_field('ssylka_na_kategoriyu_tri', 'options');?>" class="measurements-block__item">
                 <div class="measurements-block__item-title">Модернизация</div>
-                <img src="./images/home/home-3.png" alt="img" class="measurements-block__item-img">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/home/home-3.png" alt="img" class="measurements-block__item-img">
                 </a>
-                <a href="#" class="measurements-block__item">
+                <a href="<?php the_field('ssylka_na_kategoriyu_chetyre', 'options');?>" class="measurements-block__item">
                 <div class="measurements-block__item-title">Испытания СИ</div>
-                <img src="./images/home/home-4.png" alt="img" class="measurements-block__item-img">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/home/home-4.png" alt="img" class="measurements-block__item-img">
                 </a>
-                <a href="#" class="measurements-block__item">
+                <a href="<?php the_field('ssylka_na_kategoriyu_pyat', 'options');?>" class="measurements-block__item">
                 <div class="measurements-block__item-title">Аттестация ИО</div>
-                <img src="./images/home/home-5.png" alt="img" class="measurements-block__item-img">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/home/home-5.png" alt="img" class="measurements-block__item-img">
                 </a>
             </div>
             </div>
@@ -73,37 +73,37 @@
         <div class="trust-block">
         <div class="trust-block__item">
             <div class="trust-block__item-img">
-            <img src="./images/home/trust-1.png" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/home/trust-1.png" alt="img">
             </div>
         </div>
         <div class="trust-block__item">
             <div class="trust-block__item-img">
-            <img src="./images/home/trust-2.png" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/home/trust-2.png" alt="img">
             </div>
         </div>
         <div class="trust-block__item">
             <div class="trust-block__item-img">
-            <img src="./images/home/trust-3.png" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/home/trust-3.png" alt="img">
             </div>
         </div>
         <div class="trust-block__item">
             <div class="trust-block__item-img">
-            <img src="./images/home/trust-4.png" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/home/trust-4.png" alt="img">
             </div>
         </div>
         <div class="trust-block__item">
             <div class="trust-block__item-img">
-            <img src="./images/home/trust-5.png" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/home/trust-5.png" alt="img">
             </div>
         </div>
         <div class="trust-block__item">
             <div class="trust-block__item-img">
-            <img src="./images/home/trust-6.png" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/home/trust-6.png" alt="img">
             </div>
         </div>
         <div class="trust-block__item">
             <div class="trust-block__item-img">
-            <img src="./images/home/trust-7.png" alt="img">
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/home/trust-7.png" alt="img">
             </div>
         </div>
         </div>
@@ -117,7 +117,7 @@
         <div class="advantages-block">
         <div class="advantages-block__item">
             <div class="advantages-block__item-img">
-            <img src="./images/tests/advantages-1.svg" alt="img" />
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/advantages-1.svg" alt="img" />
             </div>
             <div class="advantages-block__item-title">
             Все виды метрологических услуг
@@ -129,7 +129,7 @@
         </div>
         <div class="advantages-block__item">
             <div class="advantages-block__item-img">
-            <img src="./images/tests/advantages-2.svg" alt="img" />
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/advantages-2.svg" alt="img" />
             </div>
             <div class="advantages-block__item-title">
             15 лет опыта калибровки
@@ -141,7 +141,7 @@
         </div>
         <div class="advantages-block__item">
             <div class="advantages-block__item-img">
-            <img src="./images/tests/advantages-3.svg" alt="img" />
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/advantages-3.svg" alt="img" />
             </div>
             <div class="advantages-block__item-title">
             Персональный менеджер
@@ -152,7 +152,7 @@
         </div>
         <div class="advantages-block__item">
             <div class="advantages-block__item-img">
-            <img src="./images/tests/advantages-4.svg" alt="img" />
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/advantages-4.svg" alt="img" />
             </div>
             <div class="advantages-block__item-title">
             130+ аккредитаций СИ
@@ -164,7 +164,7 @@
         </div>
         <div class="advantages-block__item">
             <div class="advantages-block__item-img">
-            <img src="./images/tests/advantages-5.svg" alt="img" />
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/advantages-5.svg" alt="img" />
             </div>
             <div class="advantages-block__item-title">
             Большой парк контрольных калибров
@@ -176,7 +176,7 @@
         </div>
         <div class="advantages-block__item">
             <div class="advantages-block__item-img">
-            <img src="./images/tests/advantages-6.svg" alt="img" />
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/advantages-6.svg" alt="img" />
             </div>
             <div class="advantages-block__item-title">
             Более 30 опытных специалистов
@@ -205,19 +205,19 @@
             <div class="slider-block__left-title name">
             Область аккредитации на поверку и калибровку
             </div>
-            <a href="#" class="slider-block__left-link">Испытания СИ</a>
-            <a href="#" class="slider-block__left-link">Поверка</a>
+            <a href="<?php the_field('ssylka_na_kategoriyu_chetyre', 'options');?>" class="slider-block__left-link">Испытания СИ</a>
+            <a href="<?php the_field('ssylka_na_kategoriyu_odin', 'options');?>" class="slider-block__left-link">Поверка</a>
         </div>
         <div class="slider-block__center">
             <div class="slider-block__inner">
             <div class="slider-block__item">
                 <div class="slider-block__item-img">
-                <img src="./images/tests/slider-img.png" alt="img" />
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/slider-img.png" alt="img" />
                 </div>
             </div>
             <div class="slider-block__item">
                 <div class="slider-block__item-img">
-                <img src="./images/tests/slider-img.png" alt="img" />
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/slider-img.png" alt="img" />
                 </div>
             </div>
             </div>
@@ -251,7 +251,7 @@
         <div class="cooperation-block">
         <div class="cooperation-block__item">
             <div class="cooperation-block__item-img">
-            <img src="./images/verification/cooperation-1.png" alt="img" />
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/cooperation-1.png" alt="img" />
             </div>
             <div class="cooperation-block__item-text">
             Общение с менеджером
@@ -259,7 +259,7 @@
         </div>
         <div class="cooperation-block__item">
             <div class="cooperation-block__item-img">
-            <img src="./images/verification/cooperation-2.png" alt="img" />
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/cooperation-2.png" alt="img" />
             </div>
             <div class="cooperation-block__item-text">
             Получение и оплата счёта
@@ -267,7 +267,7 @@
         </div>
         <div class="cooperation-block__item">
             <div class="cooperation-block__item-img">
-            <img src="./images/verification/cooperation-3.png" alt="img" />
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/cooperation-3.png" alt="img" />
             </div>
             <div class="cooperation-block__item-text">
             Передача инструмента в лабораторию
@@ -275,13 +275,13 @@
         </div>
         <div class="cooperation-block__item">
             <div class="cooperation-block__item-img">
-            <img src="./images/verification/cooperation-4.png" alt="img" />
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/cooperation-4.png" alt="img" />
             </div>
             <div class="cooperation-block__item-text">Проведение работ</div>
         </div>
         <div class="cooperation-block__item">
             <div class="cooperation-block__item-img">
-            <img src="./images/verification/cooperation-5.png" alt="img" />
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/cooperation-5.png" alt="img" />
             </div>
             <div class="cooperation-block__item-text">
             Уведомление заказчика о завершении
@@ -299,7 +299,7 @@
             <div class="reviews-slider__wrapper">
             <div class="reviews-slider__item">
                 <div class="reviews-slider__item-img">
-                <img src="./images/tests/reviews-1.png" alt="img" />
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/reviews-1.png" alt="img" />
                 </div>
                 <div class="reviews-slider__item-text">
                 Трудолюбивые сотрудники, честная организация. Оставленную на
@@ -315,7 +315,7 @@
             <div class="reviews-slider__wrapper">
             <div class="reviews-slider__item">
                 <div class="reviews-slider__item-img">
-                <img src="./images/tests/reviews-2.png" alt="img" />
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/reviews-2.png" alt="img" />
                 </div>
                 <div class="reviews-slider__item-text">
                 Трудолюбивые сотрудники, честная организация. Оставленную на
@@ -331,7 +331,7 @@
             <div class="reviews-slider__wrapper">
             <div class="reviews-slider__item">
                 <div class="reviews-slider__item-img">
-                <img src="./images/tests/reviews-3.png" alt="img" />
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/reviews-3.png" alt="img" />
                 </div>
                 <div class="reviews-slider__item-text">
                 Трудолюбивые сотрудники, честная организация. Оставленную на
@@ -347,7 +347,7 @@
             <div class="reviews-slider__wrapper">
             <div class="reviews-slider__item">
                 <div class="reviews-slider__item-img">
-                <img src="./images/tests/reviews-1.png" alt="img" />
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/reviews-1.png" alt="img" />
                 </div>
                 <div class="reviews-slider__item-text">
                 Трудолюбивые сотрудники, честная организация. Оставленную на
@@ -371,17 +371,17 @@
         <div class="yandex-box">
         <div class="yandex-box__item">
             <div class="yandex-box__item-img">
-            <img src="./images/tests/rate-1.png" alt="img" />
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/rate-1.png" alt="img" />
             </div>
         </div>
         <div class="yandex-box__item">
             <div class="yandex-box__item-img">
-            <img src="./images/tests/rate-2.png" alt="img" />
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/rate-2.png" alt="img" />
             </div>
         </div>
         <div class="yandex-box__item">
             <div class="yandex-box__item-img">
-            <img src="./images/tests/rate.png" alt="img" />
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/rate.png" alt="img" />
             </div>
         </div>
         </div>

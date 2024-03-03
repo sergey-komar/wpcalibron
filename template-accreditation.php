@@ -1,120 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calibron</title>
-    <link rel="stylesheet" href="css/style.min.css" />
-  </head>
-
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="header-top">
-          <a
-            href="tel:+74957969275"
-            class="header-top__info header-top__info--tel"
-          >
-            +7 (495) 796-92-75
-          </a>
-          <a
-            href="mailto:info@calibronrmc.ru"
-            class="header-top__info header-top__info--email"
-          >
-            info@calibronrmc.ru
-          </a>
-          <p class="header-top__info header-top__info--time">
-            Пн - Пт 8:45-17:30
-          </p>
-          <p class="header-top__info header-top__info--address">
-            г. Москва, Электродная 2, с. 23
-          </p>
-        </div>
-      </div>
-
-      <div class="header-bottom">
-        <div class="container">
-          <div class="header-bottom__inner">
-            <div class="header-bottom__search">
-              <form class="header-bottom__form">
-                <input
-                  type="text"
-                  class="header-bottom__form-input"
-                  placeholder="Search"
-                />
-              </form>
-              <div class="header-bottom__form-close">
-                <img src="./images/home/close_small.svg" alt="img" />
-              </div>
-            </div>
-            <a href="/" class="logo">
-              <img src="./images/home/header-logo.svg" alt="img" />
-            </a>
-            <div class="mobile-content">
-              <a
-                href="mailto:info@calibronrmc.ru"
-                class="mobile-content__email"
-              >
-                <img src="./images/home/mobile-mail.svg" alt="img" />
-              </a>
-              <a href="tel:+74957969275" class="mobile-content__phone">
-                <img src="./images/home/mobile-call.svg" alt="img" />
-              </a>
-            </div>
-            <nav class="menu">
-              <ul class="menu__list">
-                <li>
-                  <a href="#">О компании</a>
-                </li>
-                <li>
-                  <a class="menu__list--active" href="#">Услуги</a>
-                </li>
-                <li>
-                  <a href="#">Оборудование</a>
-                </li>
-                <li>
-                  <a href="#">Контакты</a>
-                </li>
-                <li>
-                  <a href="#">Прайс-лист</a>
-                </li>
-              </ul>
-            </nav>
-
-            <div class="header-bottom__box">
-              <div class="header-bottom__box-img">
-                <img src="./images/home/search.svg" alt="img" />
-              </div>
-
-              <button class="btn header-bottom__btn">
-                Получить консультацию
-              </button>
-            </div>
-
-            <div class="nav-icon">
-              <div class="nav-icon__middle"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
+<?php
+/**
+ * Template Name: Аккредитация
+ */
+?>
+<?php get_header();?>
     <main class="main">
       <div class="breadcrumbs">
         <div class="container">
-          <ul class="breadcrumb__list">
-            <li class="breadcrumb__list-item">
-              <a href="/" class="breadcrumb__list-link">
-                <img src="./images/home/house.svg" alt="img" />
-              </a>
-            </li>
-            <li class="breadcrumb__list-item">
-              <a href="#" class="breadcrumb__list-link">О компании</a>
-            </li>
-            <li class="breadcrumb__list-item">
-              <a href="#" class="breadcrumb__list-link">Аккредитация</a>
-            </li>
-          </ul>
+            <?php if(function_exists('bcn_display'))
+                {
+                    bcn_display();
+            }?>
         </div>
       </div>
 
@@ -474,82 +370,4 @@
         </div>
       </section>
     </main>
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-block">
-          <a href="/" class="logo logo--footer">
-            <img src="./images/home/header-logo.svg" alt="img" />
-          </a>
-
-          <div class="footer-block__info">
-            <ul class="footer-block__menu">
-              <li>
-                <a href="#">Отзывы</a>
-              </li>
-              <li>
-                <a href="#">Аккредитация</a>
-              </li>
-              <li>
-                <a href="#">Информация</a>
-              </li>
-            </ul>
-            <ul class="footer-block__menu">
-              <li>
-                <a href="#">О компании</a>
-              </li>
-              <li>
-                <a href="#">Вакансии</a>
-              </li>
-              <li>
-                <a href="#">Свидетельство о поверке</a>
-              </li>
-            </ul>
-            <ul class="footer-block__menu">
-              <li>
-                <a href="#">Справка об обезжиривании</a>
-              </li>
-              <li>
-                <a href="#">Пользовательское соглашение</a>
-              </li>
-              <li>
-                <a href="#">Политика конфиденциальности</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="footer__text">
-          © 2023 ООО Региональный метрологический центр «Калиброн». ИНН:
-          7719685973/ КПП: 772001001. Вы принимаете условия политики
-          конфиденциальности и пользовательского соглашения каждый раз, когда
-          оставляете свои данные в любой форме обратной связи на сайте
-          calibron.ru. Вся информация, представленная на веб-сайте calibron.ru,
-          включая информацию о ценах, наличию товаров и их характеристиках,
-          носит ознакомительный характер и не является публичной офертой.
-        </div>
-
-        <div class="footer-bottom">
-          <a
-            href="tel:+74957969275"
-            class="footer-bottom__info footer-bottom__info--tel"
-            >+7 (495) 796-92-75</a
-          >
-          <a
-            href="mailto:info@calibronrmc.ru"
-            class="footer-bottom__info footer-bottom__info--email"
-          >
-            info@calibronrmc.ru
-          </a>
-          <p class="footer-bottom__info footer-bottom__info--time">
-            Пн - Пт 8:45-17:30
-          </p>
-          <p class="footer-bottom__info footer-bottom__info--address">
-            г. Москва, Электродная 2, с. 23
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <script src="js/main.min.js"></script>
-  </body>
-</html>
+<?php get_footer();?>

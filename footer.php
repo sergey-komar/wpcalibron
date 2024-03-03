@@ -1,34 +1,25 @@
 <footer class="footer">
+
+        <?php
+          $catalog__terms = get_terms([
+            'taxonomy' => 'product_cat',
+            'child_of' => 0,
+            // 'orderby'     => 'id', // здесь по какому полю сортировать
+            // 'hide_empty'  => false, // скрывать категории без товаров или нет
+            // 'parent'      => 0, // id родительской категории
+                        ]);
+        ?>
        <div class="footer__category">
-        <a href="#" class="footer__category-item">
-          Аттестация шкафов сушильных
+       <?php foreach($catalog__terms as $catalog_term) :?>
+        <a href="<?php echo get_term_link($catalog_term);?>" class="footer__category-item">
+        <?php echo $catalog_term->name;?>
         </a>
-        <a href="#" class="footer__category-item">
-          Аттестация камер тепла и холода
-        </a>
-        <a href="#" class="footer__category-item">Ремонт оборудования</a>
-        <a href="#" class="footer__category-item">Аттестация холодильников</a>
-        <a href="#" class="footer__category-item">
-          Аттестация шкафов сушильных
-        </a>
-        <a href="#" class="footer__category-item">
-          Аттестация камер тепла и холода
-        </a>
-        <a href="#" class="footer__category-item"> Модернизация микроскопов </a>
-        <a href="#" class="footer__category-item">
-          Калибровка СИ времени и частоты
-        </a>
-        <a href="#" class="footer__category-item">
-          Калибровка механических СИ
-        </a>
-        <a href="#" class="footer__category-item">
-          Калибровка СИ давления и вакуума
-        </a>
+        <?php endforeach;?>
       </div> 
       <div class="container">
         <div class="footer-block">
           <a href="/" class="logo logo--footer">
-            <img src="./images/home/header-logo.svg" alt="img" />
+            <img src="<?php echo get_template_directory_uri()?>/assets/images/home/header-logo.svg" alt="img" />
           </a>
 
           <div class="footer-block__info">

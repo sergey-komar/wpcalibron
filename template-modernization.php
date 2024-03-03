@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Поверка
+ * Template Name: Модернизация
  */
 ?>
 <?php get_header();?>
@@ -17,7 +17,7 @@
         <?php
             $catalog__terms = get_terms([
                 'taxonomy' => 'product_cat',
-                'child_of' => 16,
+                'child_of' => 18,
                 ]);
         ?>
       <section class="category">
