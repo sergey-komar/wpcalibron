@@ -48,7 +48,7 @@
             <div class="modernization-box__inner">
               <div class="modernization-box__item">
                 <div class="modernization-box__item-img">
-                  <img src="./images/verification/info.svg" alt="img" />
+                  <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/info.svg" alt="img" />
                 </div>
                 <div class="modernization-box__item-text">
                   Поверка - совокупность операций, выполняемых в целях
@@ -59,7 +59,7 @@
               <div class="modernization-box__item">
                 <div class="modernization-box__item-img">
                   <img
-                    src="./images/verification/editor_choice.svg"
+                    src="<?php echo get_template_directory_uri()?>/assets/images/verification/editor_choice.svg"
                     alt="img"
                   />
                 </div>
@@ -71,7 +71,7 @@
               </div>
               <div class="modernization-box__item">
                 <div class="modernization-box__item-img">
-                  <img src="./images/modernization/avg_pace.svg" alt="img" />
+                  <img src="<?php echo get_template_directory_uri()?>/assets/images/modernization/avg_pace.svg" alt="img" />
                 </div>
                 <div class="modernization-box__item-text">
                   Срок поверки: от 10 рабочих дней
@@ -79,7 +79,7 @@
               </div>
               <div class="modernization-box__item">
                 <div class="modernization-box__item-img">
-                  <img src="./images/verification/sell.svg" alt="img" />
+                  <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/sell.svg" alt="img" />
                 </div>
                 <div class="modernization-box__item-text">
                   Цены указаны по УСН и не облагаются налогом
@@ -110,79 +110,30 @@
           <h3 class="form__title subtitle">Получить консультацию</h3>
           <div class="form-block">
             <div class="form-block__content">
+              <?php if(have_rows('poluchit_konsultacziyu_element', 'options')) : while(have_rows('poluchit_konsultacziyu_element', 'options')) : the_row();?>
               <div class="form-block__item">
-                <p class="form-block__item-text">Телефон</p>
-                <a href="tel:+74957969275" class="form-block__item-name">
-                  +7 (495) 796-92-75
-                </a>
+                <p class="form-block__item-text">
+                <?php the_sub_field('poluchit_konsultacziyu_element_tekst', 'options');?>
+                </p>
+                <div  class="form-block__item-name">
+                <?php the_sub_field('poluchit_konsultacziyu_element_zagolovok', 'options');?>
+                </div>
                 <img
-                  src="./images/home/call-form.svg"
+                  src=" <?php the_sub_field('poluchit_konsultacziyu_element_izobrazhenie', 'options');?>"
                   alt="img"
                   class="form-block__item-img"
                 />
               </div>
-              <div class="form-block__item">
-                <p class="form-block__item-text">Почта</p>
-                <a
-                  href="mailto:info@calibronrmc.ru"
-                  class="form-block__item-name"
-                >
-                  info@calibronrmc.ru
-                </a>
-                <img
-                  src="./images/home/mail-form.svg"
-                  alt="img"
-                  class="form-block__item-img"
-                />
-              </div>
-              <div class="form-block__item">
-                <p class="form-block__item-text">По будням</p>
-                <div class="form-block__item-name">08:45-17:30</div>
-                <img
-                  src="./images/home/alarm-form.svg"
-                  alt="img"
-                  class="form-block__item-img"
-                />
-              </div>
-              <div class="form-block__item">
-                <p class="form-block__item-text">Москва</p>
-                <div class="form-block__item-name">Электродная 2, с. 23</div>
-                <img
-                  src="./images/home/location_on-form.svg"
-                  alt="img"
-                  class="form-block__item-img"
-                />
-              </div>
+              <?php endwhile; endif;?>
             </div>
 
-            <form class="form-block__info">
+            <div class="form-block__info">
               <p class="form-block__info-text">
                 Наш менеджер свяжется с вами и ответит на все интересующие
                 вопросы
               </p>
-              <div
-                class="form-block__info-wrapper form-block__info-wrapper--user"
-              >
-                <input
-                  type="text"
-                  class="form-block__info-input"
-                  placeholder="Имя"
-                  required
-                />
-              </div>
-
-              <div
-                class="form-block__info-wrapper form-block__info-wrapper--phone"
-              >
-                <input
-                  type="text"
-                  class="form-block__info-input"
-                  placeholder="Телефон"
-                  required
-                />
-              </div>
-              <button class="form-block__info-btn btn">Ждем звонка!</button>
-            </form>
+              <?php echo do_shortcode('[contact-form-7 id="d96f30b" title="Форма консультация"]')?>
+            </div>
           </div>
         </div>
       </section>

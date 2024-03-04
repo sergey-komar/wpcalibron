@@ -1,5 +1,5 @@
 <?php
-
+// КАРТОЧКА ОДНОГО  НА СТРАНИЦЕ ОТДЕЛЬНОГО ТОВАРА
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly

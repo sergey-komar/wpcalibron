@@ -8,6 +8,7 @@
 }
 
 .mega-menu-link {
+    font-size: 14px !important;
     text-align: center !important;
     text-transform: none !important;
 }
@@ -89,18 +90,59 @@
 div.asl_w .probox .proinput input {
     color: #464753 !important;
 }
+
 .search #ajaxsearchlite1 .probox .proinput input,
-div.asl_w .probox .proinput input::placeholder{
+div.asl_w .probox .proinput input::placeholder {
     color: #464753 !important;
 }
+
 .search div.asl_w .probox .proinput input::-webkit-input-placeholder {
     color: #464753 !important;
 }
 
-.accreditation-search{
+.accreditation-search {
     padding-top: 3rem;
 }
 
+.mega-sub-menu .mega-sub-menu .mega-sub-menu .mega-sub-menu {
+    display: none !important;
+    transition: all .4s ease-in;
+}
+
+.mega-sub-menu .mega-menu-item:hover .mega-sub-menu {
+    display: block !important;
+    transition: all .4s ease-in;
+}
+
+.tests-block__img img {
+    border-radius: 8px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.page-numbers.current {
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 4px;
+    background: #f5f5f5;
+    color: #3366ff;
+}
+.device__price{
+    font-size: 3.5rem;
+}
 
 
 
@@ -151,4 +193,24 @@ div.asl_w .probox .proinput input::placeholder{
         margin-left: auto;
         margin-right: auto;
     }
+
+    .mega-menu.max-mega-menu.mega-menu-horizontal {
+        padding-bottom: 150px !important;
+    }
+
+    .breadcrumbs span {
+        font-size: 14px;
+    }
+
+    .device {
+        padding-top: 1.5rem;
+    }
+
+    .pagination {
+        justify-content: center;
+    }
+    .device__price{
+        font-size: 24px;
+    }
+    
 }

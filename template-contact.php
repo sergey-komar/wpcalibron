@@ -21,79 +21,30 @@
           <div class="form__inner">
             <div class="form-block">
               <div class="form-block__content">
+                <?php if(have_rows('poluchit_konsultacziyu_element', 'options')) : while(have_rows('poluchit_konsultacziyu_element', 'options')) : the_row();?>
                 <div class="form-block__item">
-                  <p class="form-block__item-text">Телефон</p>
-                  <a href="tel:+74957969275" class="form-block__item-name">
-                    +7 (495) 796-92-75
-                  </a>
+                  <p class="form-block__item-text">
+                  <?php the_sub_field('poluchit_konsultacziyu_element_tekst', 'options');?>
+                  </p>
+                  <div  class="form-block__item-name">
+                  <?php the_sub_field('poluchit_konsultacziyu_element_zagolovok', 'options');?>
+                  </div>
                   <img
-                    src="./images/home/call-form.svg"
+                    src=" <?php the_sub_field('poluchit_konsultacziyu_element_izobrazhenie', 'options');?>"
                     alt="img"
                     class="form-block__item-img"
                   />
                 </div>
-                <div class="form-block__item">
-                  <p class="form-block__item-text">Почта</p>
-                  <a
-                    href="mailto:info@calibronrmc.ru"
-                    class="form-block__item-name"
-                  >
-                    info@calibronrmc.ru
-                  </a>
-                  <img
-                    src="./images/home/mail-form.svg"
-                    alt="img"
-                    class="form-block__item-img"
-                  />
-                </div>
-                <div class="form-block__item">
-                  <p class="form-block__item-text">По будням</p>
-                  <div class="form-block__item-name">08:45-17:30</div>
-                  <img
-                    src="./images/home/alarm-form.svg"
-                    alt="img"
-                    class="form-block__item-img"
-                  />
-                </div>
-                <div class="form-block__item">
-                  <p class="form-block__item-text">Москва</p>
-                  <div class="form-block__item-name">Электродная 2, с. 23</div>
-                  <img
-                    src="./images/home/location_on-form.svg"
-                    alt="img"
-                    class="form-block__item-img"
-                  />
-                </div>
+                <?php endwhile; endif;?>
               </div>
 
-              <form class="form-block__info">
+              <div class="form-block__info">
                 <p class="form-block__info-text">
                   Наш менеджер свяжется с вами и ответит на все интересующие
                   вопросы
                 </p>
-                <div
-                  class="form-block__info-wrapper form-block__info-wrapper--user"
-                >
-                  <input
-                    type="text"
-                    class="form-block__info-input"
-                    placeholder="Имя"
-                    required
-                  />
-                </div>
-
-                <div
-                  class="form-block__info-wrapper form-block__info-wrapper--phone"
-                >
-                  <input
-                    type="text"
-                    class="form-block__info-input"
-                    placeholder="Телефон"
-                    required
-                  />
-                </div>
-                <button class="form-block__info-btn btn">Ждем звонка!</button>
-              </form>
+                <?php echo do_shortcode('[contact-form-7 id="d96f30b" title="Форма консультация"]')?>
+              </div>
             </div>
 
             <div class="map">
@@ -112,72 +63,32 @@
         <div class="container">
           <h3 class="employees-title title">Наши сотрудники</h3>
           <div class="employees-block">
+            <?php if(have_rows('kontakty_sotrudniki_kartochka')) : while(have_rows('kontakty_sotrudniki_kartochka')) : the_row();?>
             <div class="employees-block__item">
               <div class="employees-block__item-img">
-                <img src="./images/employees.png" alt="img" />
+                <img src="<?php the_sub_field('kontakty_sotrudniki_kartochka_izobrazhenie');?>" alt="img" />
               </div>
               <div class="employees-block__item-title">
-                Татьяна Ивановна Димитриева
+              <?php the_sub_field('kontakty_sotrudniki_kartochka_imya');?>
               </div>
               <div class="employees-block__item-job">
-                Руководитель отдела сбыта
+              <?php the_sub_field('kontakty_sotrudniki_kartochka_dolzhnost');?>
               </div>
               <a
-                href="mailto:dim@calibronrmc.ru"
+                href="mailto:<?php the_sub_field('kontakty_sotrudniki_kartochka_pochta');?>"
                 class="employees-block__item-info employees-block__item-info--email"
-                >dim@calibronrmc.ru</a
+                ><?php the_sub_field('kontakty_sotrudniki_kartochka_pochta');?></a
               >
               <a
-                href="tel:+74957969275"
+                href="tel:<?php the_sub_field('kontakty_sotrudniki_kartochka_telefon');?>"
                 class="employees-block__item-info employees-block__item-info--tel"
-                >+7 495 796-92-75</a
+                ><?php the_sub_field('kontakty_sotrudniki_kartochka_telefon');?></a
               >
-              <span class="employees-block__item-info">Добавочный: 2172</span>
+              <span class="employees-block__item-info">
+              <?php the_sub_field('kontakty_sotrudniki_kartochka_dobavochnyj_tel');?>
+              </span>
             </div>
-            <div class="employees-block__item">
-              <div class="employees-block__item-img">
-                <img src="./images/employees.png" alt="img" />
-              </div>
-              <div class="employees-block__item-title">
-                Татьяна Ивановна Димитриева
-              </div>
-              <div class="employees-block__item-job">
-                Руководитель отдела сбыта
-              </div>
-              <a
-                href="mailto:dim@calibronrmc.ru"
-                class="employees-block__item-info employees-block__item-info--email"
-                >dim@calibronrmc.ru</a
-              >
-              <a
-                href="tel:+74957969275"
-                class="employees-block__item-info employees-block__item-info--tel"
-                >+7 495 796-92-75</a
-              >
-              <span class="employees-block__item-info">Добавочный: 2172</span>
-            </div>
-            <div class="employees-block__item">
-              <div class="employees-block__item-img">
-                <img src="./images/employees.png" alt="img" />
-              </div>
-              <div class="employees-block__item-title">
-                Татьяна Ивановна Димитриева
-              </div>
-              <div class="employees-block__item-job">
-                Руководитель отдела сбыта
-              </div>
-              <a
-                href="mailto:dim@calibronrmc.ru"
-                class="employees-block__item-info employees-block__item-info--email"
-                >dim@calibronrmc.ru</a
-              >
-              <a
-                href="tel:+74957969275"
-                class="employees-block__item-info employees-block__item-info--tel"
-                >+7 495 796-92-75</a
-              >
-              <span class="employees-block__item-info">Добавочный: 2172</span>
-            </div>
+            <?php endwhile; endif;?>
           </div>
         </div>
       </section>
@@ -186,68 +97,16 @@
         <div class="container">
           <div class="information-wrraper">
             <div class="information-block">
+              <?php if(have_rows('kontakty_dannye_element')) : while(have_rows('kontakty_dannye_element')) : the_row();?>
               <div class="information-block__item">
                 <div class="information-block__item-name">
-                  Полное название предприятия:
+                <?php the_sub_field('kontakty_dannye_element_zagolovok');?>
                 </div>
                 <div class="information-block__item-text">
-                  Общество с ограниченной ответственностью Региональный
-                  метрологический центр «Калиброн»
+                <?php the_sub_field('kontakty_dannye_element_tekst');?>
                 </div>
               </div>
-              <div class="information-block__item">
-                <div class="information-block__item-name">
-                  Сокращенное название предприятия:
-                </div>
-                <div class="information-block__item-text">ООО РМЦ «Калиброн»</div>
-              </div>
-              <div class="information-block__item">
-                <div class="information-block__item-name">Юридический адрес:</div>
-                <div class="information-block__item-text">
-                  111524 г. Москва, ул. Электродная, дом 2, строение 23, этаж 1,
-                  пом. 1
-                </div>
-              </div>
-              <div class="information-block__item">
-                <div class="information-block__item-name">Фактический адрес:</div>
-                <div class="information-block__item-text">
-                  111524 г. Москва, ул. Электродная, дом 2, строение 23
-                </div>
-              </div>
-              <div class="information-block__item">
-                <div class="information-block__item-name">ОГРН</div>
-                <div class="information-block__item-text">1087746764247</div>
-              </div>
-              <div class="information-block__item">
-                <div class="information-block__item-name">ИНН</div>
-                <div class="information-block__item-text">7719685973</div>
-              </div>
-              <div class="information-block__item">
-                <div class="information-block__item-name">КПП</div>
-                <div class="information-block__item-text">772001001</div>
-              </div>
-              <div class="information-block__item">
-                <div class="information-block__item-name">Коды:</div>
-                <div class="information-block__item-text">
-                  ОКПО 86584677 ОКАТО 45263594000 ОКОПФ 65 ОКФС 16 ОКВЭД 74.30
-                  ОКГУ 49013
-                </div>
-              </div>
-              <div class="information-block__item">
-                <div class="information-block__item-name">
-                  Банковские реквизиты СБЕРБАНК
-                </div>
-                <div class="information-block__item-text">
-                  Р/с 40702810738000159482 в ПАО Сбербанк к/с 30101810400000000225
-                  БИК 044525225
-                </div>
-              </div>
-              <div class="information-block__item">
-                <div class="information-block__item-name">Директор</div>
-                <div class="information-block__item-text">
-                  Никульшин Никита Михайлович
-                </div>
-              </div>
+              <?php endwhile; endif;?>
             </div>
           </div>
         </div>

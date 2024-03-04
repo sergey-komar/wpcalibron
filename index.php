@@ -192,200 +192,147 @@
 
 
     <section class="slider">
-    <div class="container">
-        <div class="tests__circle">
-        <div class="circle">
-            <div class="text">
-            <p>Метрология Р М Ц Калиброн</p>
-            </div>
-        </div>
-        </div>
-        <div class="slider-block">
-        <div class="slider-block__left">
-            <div class="slider-block__left-title name">
-            Область аккредитации на поверку и калибровку
-            </div>
-            <a href="<?php the_field('ssylka_na_kategoriyu_chetyre', 'options');?>" class="slider-block__left-link">Испытания СИ</a>
-            <a href="<?php the_field('ssylka_na_kategoriyu_odin', 'options');?>" class="slider-block__left-link">Поверка</a>
-        </div>
-        <div class="slider-block__center">
-            <div class="slider-block__inner">
-            <div class="slider-block__item">
-                <div class="slider-block__item-img">
-                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/slider-img.png" alt="img" />
-                </div>
-            </div>
-            <div class="slider-block__item">
-                <div class="slider-block__item-img">
-                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/slider-img.png" alt="img" />
+        <div class="container">
+            <div class="tests__circle">
+            <div class="circle">
+                <div class="text">
+                <p>Метрология Р М Ц Калиброн</p>
                 </div>
             </div>
             </div>
+            <div class="slider-block">
+            <div class="slider-block__left">
+                <div class="slider-block__left-title name">
+                Область аккредитации на поверку и калибровку
+                </div>
+                <a href="<?php the_field('ssylka_na_kategoriyu_chetyre', 'options');?>" class="slider-block__left-link">Испытания СИ</a>
+                <a href="<?php the_field('ssylka_na_kategoriyu_odin', 'options');?>" class="slider-block__left-link">Поверка</a>
+            </div>
+            <div class="slider-block__center">
+                <div class="slider-block__inner">
+                    <?php if(have_rows('slajder_element','options')) : while(have_rows('slajder_element', 'options')) : the_row();?>
+                    <div class="slider-block__item">
+                        <div class="slider-block__item-img">
+                        <img src="<?php the_sub_field('slajder_element_izobrazhenie', 'options');?>" alt="img" />
+                        </div>
+                    </div>
+                    <?php endwhile; endif;?>
+                </div>
+            </div>
+            <div class="slider-block__right">
+                <p class="slider-block__right-text">
+                <?php the_field('slajder_pravyj_blok_tekst_odin', 'options');?>
+                </p>
+                <p class="slider-block__right-text">
+                <?php the_field('slajder_pravyj_blok_tekst_dva', 'options');?>
+                </p>
+                <a href="<?php the_field('slajder_pravyj_blok_ssylka', 'options');?>" class="slider-block__right-btn btn">Все документы</a>
+            </div>
+            </div>
+            <a
+            href="#"
+            class="slider-block__right-btn btn slider-block__right-btn--mobile"
+            >Все документы</a
+            >
         </div>
-        <div class="slider-block__right">
-            <p class="slider-block__right-text">
-            Метрологическая лаборатория РМЦ «КАЛИБРОН» аккредитована в
-            национальной системе аккредитации (РОСС RU.0001.310 096 и
-            RA.RU.314 442).
-            </p>
-            <p class="slider-block__right-text">
-            С 2008 года компания предоставляет услуги по поверке и
-            калибровке средств измерений, стремясь к постоянному развитию и
-            высокому стандарту качества
-            </p>
-            <a href="#" class="slider-block__right-btn btn">Все документы</a>
-        </div>
-        </div>
-        <a
-        href="#"
-        class="slider-block__right-btn btn slider-block__right-btn--mobile"
-        >Все документы</a
-        >
-    </div>
     </section>
 
 
     <div class="cooperation">
-    <div class="container">
-        <h3 class="cooperation__title subtitle">Как устроено сотрудничество</h3>
-        <div class="cooperation-block">
-        <div class="cooperation-block__item">
-            <div class="cooperation-block__item-img">
-            <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/cooperation-1.png" alt="img" />
+        <div class="container">
+            <h3 class="cooperation__title subtitle">Как устроено сотрудничество</h3>
+            <div class="cooperation-block">
+            <div class="cooperation-block__item">
+                <div class="cooperation-block__item-img">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/cooperation-1.png" alt="img" />
+                </div>
+                <div class="cooperation-block__item-text">
+                Общение с менеджером
+                </div>
             </div>
-            <div class="cooperation-block__item-text">
-            Общение с менеджером
+            <div class="cooperation-block__item">
+                <div class="cooperation-block__item-img">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/cooperation-2.png" alt="img" />
+                </div>
+                <div class="cooperation-block__item-text">
+                Получение и оплата счёта
+                </div>
+            </div>
+            <div class="cooperation-block__item">
+                <div class="cooperation-block__item-img">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/cooperation-3.png" alt="img" />
+                </div>
+                <div class="cooperation-block__item-text">
+                Передача инструмента в лабораторию
+                </div>
+            </div>
+            <div class="cooperation-block__item">
+                <div class="cooperation-block__item-img">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/cooperation-4.png" alt="img" />
+                </div>
+                <div class="cooperation-block__item-text">Проведение работ</div>
+            </div>
+            <div class="cooperation-block__item">
+                <div class="cooperation-block__item-img">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/cooperation-5.png" alt="img" />
+                </div>
+                <div class="cooperation-block__item-text">
+                Уведомление заказчика о завершении
+                </div>
+            </div>
             </div>
         </div>
-        <div class="cooperation-block__item">
-            <div class="cooperation-block__item-img">
-            <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/cooperation-2.png" alt="img" />
-            </div>
-            <div class="cooperation-block__item-text">
-            Получение и оплата счёта
-            </div>
-        </div>
-        <div class="cooperation-block__item">
-            <div class="cooperation-block__item-img">
-            <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/cooperation-3.png" alt="img" />
-            </div>
-            <div class="cooperation-block__item-text">
-            Передача инструмента в лабораторию
-            </div>
-        </div>
-        <div class="cooperation-block__item">
-            <div class="cooperation-block__item-img">
-            <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/cooperation-4.png" alt="img" />
-            </div>
-            <div class="cooperation-block__item-text">Проведение работ</div>
-        </div>
-        <div class="cooperation-block__item">
-            <div class="cooperation-block__item-img">
-            <img src="<?php echo get_template_directory_uri()?>/assets/images/verification/cooperation-5.png" alt="img" />
-            </div>
-            <div class="cooperation-block__item-text">
-            Уведомление заказчика о завершении
-            </div>
-        </div>
-        </div>
-    </div>
     </div> 
 
     <section class="reviews">
-    <div class="container">
-        <div class="reviews__title title">Отзывы наших клиентов</div>
-        <div class="reviews-slider">
-        <div class="reviews-slider__inner">
-            <div class="reviews-slider__wrapper">
-            <div class="reviews-slider__item">
-                <div class="reviews-slider__item-img">
-                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/reviews-1.png" alt="img" />
+        <div class="container">
+            <div class="reviews__title title">Отзывы наших клиентов</div>
+            <div class="reviews-slider">
+            <div class="reviews-slider__inner">
+                <?php if(have_rows('otzyvy_element', 'options')) : while(have_rows('otzyvy_element', 'options')) : the_row();?>
+                <div class="reviews-slider__wrapper">
+                    <div class="reviews-slider__item">
+                        <div class="reviews-slider__item-img">
+                        <img src="<?php the_sub_field('otzyvy_element_izobrazhenie', 'options');?>" alt="img" />
+                        </div>
+                        <div class="reviews-slider__item-text">
+                        <?php the_sub_field('otzyvy_element_tekst', 'options');?>
+                        </div>
+                        <div class="reviews-slider__item-name">
+                        <?php the_sub_field('otzyvy_element_imya', 'options');?>
+                        </div>
+                        <div class="reviews-slider__item-job">
+                        <?php the_sub_field('otzyvy_element_dolzhnost', 'options');?>
+                        </div>
+                    </div>
                 </div>
-                <div class="reviews-slider__item-text">
-                Трудолюбивые сотрудники, честная организация. Оставленную на
-                сайте заявку обрабатывают практически моментально. Бывало,
-                вносим правки, при этом негатива не испытываем. Наоборот,
-                менеджеры, тут же реагируют и выполняют обновленный заказ.
-                Инструмент получаем в срок с соответствующей документацией.
-                </div>
-                <div class="reviews-slider__item-name">Михаил Иджян</div>
-                <div class="reviews-slider__item-job">Директор</div>
+                <?php endwhile; endif;?>
             </div>
-            </div>
-            <div class="reviews-slider__wrapper">
-            <div class="reviews-slider__item">
-                <div class="reviews-slider__item-img">
-                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/reviews-2.png" alt="img" />
-                </div>
-                <div class="reviews-slider__item-text">
-                Трудолюбивые сотрудники, честная организация. Оставленную на
-                сайте заявку обрабатывают практически моментально. Бывало,
-                вносим правки, при этом негатива не испытываем. Наоборот,
-                менеджеры, тут же реагируют и выполняют обновленный заказ.
-                Инструмент получаем в срок с соответствующей документацией.
-                </div>
-                <div class="reviews-slider__item-name">Михаил Иджян</div>
-                <div class="reviews-slider__item-job">Директор</div>
-            </div>
-            </div>
-            <div class="reviews-slider__wrapper">
-            <div class="reviews-slider__item">
-                <div class="reviews-slider__item-img">
-                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/reviews-3.png" alt="img" />
-                </div>
-                <div class="reviews-slider__item-text">
-                Трудолюбивые сотрудники, честная организация. Оставленную на
-                сайте заявку обрабатывают практически моментально. Бывало,
-                вносим правки, при этом негатива не испытываем. Наоборот,
-                менеджеры, тут же реагируют и выполняют обновленный заказ.
-                Инструмент получаем в срок с соответствующей документацией.
-                </div>
-                <div class="reviews-slider__item-name">Михаил Иджян</div>
-                <div class="reviews-slider__item-job">Директор</div>
-            </div>
-            </div>
-            <div class="reviews-slider__wrapper">
-            <div class="reviews-slider__item">
-                <div class="reviews-slider__item-img">
-                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/reviews-1.png" alt="img" />
-                </div>
-                <div class="reviews-slider__item-text">
-                Трудолюбивые сотрудники, честная организация. Оставленную на
-                сайте заявку обрабатывают практически моментально. Бывало,
-                вносим правки, при этом негатива не испытываем. Наоборот,
-                менеджеры, тут же реагируют и выполняют обновленный заказ.
-                Инструмент получаем в срок с соответствующей документацией.
-                </div>
-                <div class="reviews-slider__item-name">Михаил Иджян</div>
-                <div class="reviews-slider__item-job">Директор</div>
-            </div>
+            <div class="reviews-slider__arrows"></div>
             </div>
         </div>
-        <div class="reviews-slider__arrows"></div>
-        </div>
-    </div>
     </section>
 
     <div class="yandex">
-    <div class="container">
-        <div class="yandex-box">
-        <div class="yandex-box__item">
-            <div class="yandex-box__item-img">
-            <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/rate-1.png" alt="img" />
+        <div class="container">
+            <div class="yandex-box">
+            <div class="yandex-box__item">
+                <div class="yandex-box__item-img">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/rate-1.png" alt="img" />
+                </div>
+            </div>
+            <div class="yandex-box__item">
+                <div class="yandex-box__item-img">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/rate-2.png" alt="img" />
+                </div>
+            </div>
+            <div class="yandex-box__item">
+                <div class="yandex-box__item-img">
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/rate.png" alt="img" />
+                </div>
+            </div>
             </div>
         </div>
-        <div class="yandex-box__item">
-            <div class="yandex-box__item-img">
-            <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/rate-2.png" alt="img" />
-            </div>
-        </div>
-        <div class="yandex-box__item">
-            <div class="yandex-box__item-img">
-            <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/rate.png" alt="img" />
-            </div>
-        </div>
-        </div>
-    </div>
     </div>
     
 </main>

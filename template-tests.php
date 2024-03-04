@@ -19,52 +19,12 @@
             <h1 class="tests__title title">Испытания СИ</h1>
             <div class="tests-block">
             <div class="tests-block__img">
-                <img src="./images/tests/test-img.png" alt="img" />
+                <img src="<?php the_field('ispytaniya_kartinka_v_perom_bloke')?>" />
             </div>
-            <form class="tests-block__form">
+            <div class="tests-block__form">
                 <div class="tests-block__form-title name">Оставить заявку</div>
-                <div class="tests-block__wrapper tests-block__wrapper--user">
-                <input
-                    type="text"
-                    class="tests-block__form-input"
-                    placeholder="Имя"
-                    required
-                />
-                </div>
-                <div class="tests-block__wrapper tests-block__wrapper--phone">
-                <input
-                    type="text"
-                    class="tests-block__form-input"
-                    placeholder="Телефон"
-                    required
-                />
-                </div>
-                <div class="tests-block__wrapper tests-block__wrapper--email">
-                <input
-                    type="text"
-                    class="tests-block__form-input"
-                    placeholder="Email"
-                    required
-                />
-                </div>
-                <div class="tests-block__wrapper tests-block__wrapper--inn">
-                <input
-                    type="text"
-                    class="tests-block__form-input"
-                    placeholder="ИНН"
-                    required
-                />
-                </div>
-                <textarea
-                class="tests-block__form-textarea"
-                placeholder="Дополнительная мнформация о заказе"
-                ></textarea>
-
-                <div class="tests-block__bottom">
-                <input class="tests-block__form-file" type="file" />
-                </div>
-                <button class="tests-block__form-btn btn">Подтвердить</button>
-            </form>
+                <?php echo do_shortcode('[contact-form-7 id="bc1a5e1" title="Форма в продукте"]')?>
+            </div>
             </div>
         </div>
     </section>
@@ -148,35 +108,17 @@
     <div class="word">
         <div class="container">
             <div class="word-block">
-            <div class="word-block__item">
-                <div class="word-block__item-img">
-                <img src="./images/price-word.png" alt="img" />
+                <?php if(have_rows('ispytaniya_dokumenty_element')) : while(have_rows('ispytaniya_dokumenty_element')) : the_row();?>
+                <div class="word-block__item">
+                    <div class="word-block__item-img">
+                    <img src="<?php the_sub_field('ispytaniya_dokumenty_element_kartinka');?>" alt="img" />
+                    </div>
+                    <div class="word-block__content">
+                    <a href="<?php the_sub_field('ispytaniya_dokumenty_element_skachat');?>" class="word-block__content-link">Скачать</a>
+                    <div class="word-block__content-title"><?php the_sub_field('ispytaniya_dokumenty_element_nazvanie');?></div>
+                    </div>
                 </div>
-                <div class="word-block__content">
-                <a href="#" class="word-block__content-link">Скачать</a>
-                <div class="word-block__content-title">Бланк заявки</div>
-                </div>
-            </div>
-            <div class="word-block__item">
-                <div class="word-block__item-img">
-                <img src="./images/price-exel.png" alt="img" />
-                </div>
-                <div class="word-block__content">
-                <a href="#" class="word-block__content-link">Скачать</a>
-                <div class="word-block__content-title">Прайс лист</div>
-                </div>
-            </div>
-            <div class="word-block__item">
-                <div class="word-block__item-img">
-                <img src="./images/price-word.png" alt="img" />
-                </div>
-                <div class="word-block__content">
-                <a href="#" class="word-block__content-link">Скачать</a>
-                <div class="word-block__content-title">
-                    Бланк выездной поверки
-                </div>
-                </div>
-            </div>
+                <?php endwhile; endif;?>
             </div>
         </div>
     </div>
@@ -184,85 +126,28 @@
     <section class="region">
         <div class="container">
             <h3 class="region__title title">Область аккредитации</h3>
+            <?php if(have_rows('ispytaniya_informacziya_element')) : while(have_rows('ispytaniya_informacziya_element')) : the_row();?>
             <p class="region__text">
-            Наша лаборатория аккредитована на право проведения испытаний в целях
-            утверждения типа средств измерений (внесение в ГОСРЕЕСТР СИ), номер
-            в реестре аккредитованных лиц RA.RU.314442
+            <?php the_sub_field('ispytaniya_informacziya_element_tekst');?>
             </p>
-            <p class="region__text">
-            В соответствии с Федеральным законом №102-ФЗ в сфере
-            государственного регулирования обеспечения единства измерений
-            применяются средства измерений утвержденного типа. Утверждение типа
-            средств измерений – документально оформленное в установленном
-            порядке решение о признании соответствия типа средств измерений
-            метрологическим и техническим требованиям (характеристикам) на
-            основании результатов испытаний средств измерений в целях
-            утверждения типа.
-            </p>
-            <div class="region-block">
-            <ul class="region-block__list">
-                <li class="region-block__list-item">Штангенинструмент</li>
-                <li class="region-block__list-item">
-                Микрометрический инструмент
-                </li>
-                <li class="region-block__list-item">
-                Глубиномеры микрометрические, глубиномеры, индикаторные
-                </li>
-                <li class="region-block__list-item">
-                Скобы с отсчетным устройством: скобы рычажные, скобы
-                индикаторные
-                </li>
-                <li class="region-block__list-item">
-                Головки измерительные рычажно-зубчатые, многооборотные, цифровые
-                </li>
-                <li class="region-block__list-item">
-                Индикаторы часового типа, рычажного типа и многооборотные,
-                цифровые
-                </li>
-                <li class="region-block__list-item">
-                Нутромеры индикаторные, нутромеры повышенной точности, нутромеры
-                трехточечные. Нутромеры микрометрические
-                </li>
-                <li class="region-block__list-item">
-                Угломеры нониусные, оптические, цифровые, маятниковые
-                </li>
-                <li class="region-block__list-item">Шаблоны</li>
-                <li class="region-block__list-item">
-                Линейки измерительные металлические искладные
-                </li>
-                <li class="region-block__list-item">Линейки поверочные</li>
-                <li class="region-block__list-item">
-                Линейки охватывающие (циркометры)
-                </li>
-                <li class="region-block__list-item">
-                Рулетки металлические измерительные
-                </li>
-            </ul>
+            <?php endwhile; endif;?>
 
-            <ul class="region-block__list">
-                <li class="region-block__list-item">Плиты поверочные</li>
-                <li class="region-block__list-item">
-                Уровни рамные и брусковые, в т.ч. с микрометрической подачей
-                ампулы
-                </li>
-                <li class="region-block__list-item">Уровни строительные</li>
-                <li class="region-block__list-item">Угольники</li>
-                <li class="region-block__list-item">
-                Меры внутренних и наружных диаметров
-                </li>
-                <li class="region-block__list-item">Толщиномеры, стенкомеры</li>
-                <li class="region-block__list-item">Проволочки, ролики</li>
-                <li class="region-block__list-item">Щупы</li>
-                <li class="region-block__list-item">Сита лабораторные</li>
-                <li class="region-block__list-item">
-                Образцы шероховатости поверхности (сравнения)
-                </li>
-                <li class="region-block__list-item">Кронциркули индикаторные</li>
-                <li class="region-block__list-item">Штифты контрольные</li>
-                <li class="region-block__list-item">
-                Меры длины концевые плоскопараллельные
-                </li>
-            </ul>
+            <div class="region-block">
+                <ul class="region-block__list">
+                    <?php if(have_rows('ispytaniya_informacziya_spisok_levo')) : while(have_rows('ispytaniya_informacziya_spisok_levo')) : the_row();?>
+                    <li class="region-block__list-item">
+                    <?php the_sub_field('ispytaniya_informacziya_spisok_levo_tekst');?>
+                    </li>
+                    <?php endwhile; endif;?>
+                </ul>
+
+                <ul class="region-block__list">
+                    <?php if(have_rows('ispytaniya_informacziya_spisok_pravo')) : while(have_rows('ispytaniya_informacziya_spisok_pravo')) : the_row();?>
+                    <li class="region-block__list-item">
+                    <?php the_sub_field('ispytaniya_informacziya_spisok_pravo_tekst');?>
+                    </li>
+                    <?php endwhile; endif;?>
+                </ul>
             </div>
         </div>
     </section>
@@ -273,7 +158,7 @@
             <div class="advantages-block">
             <div class="advantages-block__item">
                 <div class="advantages-block__item-img">
-                <img src="./images/tests/advantages-1.svg" alt="img" />
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/advantages-1.svg" alt="img" />
                 </div>
                 <div class="advantages-block__item-title">
                 Все виды метрологических услуг
@@ -285,7 +170,7 @@
             </div>
             <div class="advantages-block__item">
                 <div class="advantages-block__item-img">
-                <img src="./images/tests/advantages-2.svg" alt="img" />
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/advantages-2.svg" alt="img" />
                 </div>
                 <div class="advantages-block__item-title">
                 15 лет опыта калибровки
@@ -297,7 +182,7 @@
             </div>
             <div class="advantages-block__item">
                 <div class="advantages-block__item-img">
-                <img src="./images/tests/advantages-3.svg" alt="img" />
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/advantages-3.svg" alt="img" />
                 </div>
                 <div class="advantages-block__item-title">
                 Персональный менеджер
@@ -308,7 +193,7 @@
             </div>
             <div class="advantages-block__item">
                 <div class="advantages-block__item-img">
-                <img src="./images/tests/advantages-4.svg" alt="img" />
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/advantages-4.svg" alt="img" />
                 </div>
                 <div class="advantages-block__item-title">
                 130+ аккредитаций СИ
@@ -320,7 +205,7 @@
             </div>
             <div class="advantages-block__item">
                 <div class="advantages-block__item-img">
-                <img src="./images/tests/advantages-5.svg" alt="img" />
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/advantages-5.svg" alt="img" />
                 </div>
                 <div class="advantages-block__item-title">
                 Большой парк контрольных калибров
@@ -332,7 +217,7 @@
             </div>
             <div class="advantages-block__item">
                 <div class="advantages-block__item-img">
-                <img src="./images/tests/advantages-6.svg" alt="img" />
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/advantages-6.svg" alt="img" />
                 </div>
                 <div class="advantages-block__item-title">
                 Более 30 опытных специалистов
@@ -360,35 +245,28 @@
                 <div class="slider-block__left-title name">
                 Область аккредитации на поверку и калибровку
                 </div>
-                <a href="#" class="slider-block__left-link">Испытания СИ</a>
-                <a href="#" class="slider-block__left-link">Поверка</a>
+                <a href="<?php the_field('ssylka_na_kategoriyu_chetyre', 'options');?>" class="slider-block__left-link">Испытания СИ</a>
+                <a href="<?php the_field('ssylka_na_kategoriyu_odin', 'options');?>" class="slider-block__left-link">Поверка</a>
             </div>
             <div class="slider-block__center">
                 <div class="slider-block__inner">
-                <div class="slider-block__item">
-                    <div class="slider-block__item-img">
-                    <img src="./images/tests/slider-img.png" alt="img" />
+                    <?php if(have_rows('slajder_element','options')) : while(have_rows('slajder_element', 'options')) : the_row();?>
+                    <div class="slider-block__item">
+                        <div class="slider-block__item-img">
+                        <img src="<?php the_sub_field('slajder_element_izobrazhenie', 'options');?>" alt="img" />
+                        </div>
                     </div>
-                </div>
-                <div class="slider-block__item">
-                    <div class="slider-block__item-img">
-                    <img src="./images/tests/slider-img.png" alt="img" />
-                    </div>
-                </div>
+                    <?php endwhile; endif;?>
                 </div>
             </div>
             <div class="slider-block__right">
                 <p class="slider-block__right-text">
-                Метрологическая лаборатория РМЦ «КАЛИБРОН» аккредитована в
-                национальной системе аккредитации (РОСС RU.0001.310 096 и
-                RA.RU.314 442).
+                <?php the_field('slajder_pravyj_blok_tekst_odin', 'options');?>
                 </p>
                 <p class="slider-block__right-text">
-                С 2008 года компания предоставляет услуги по поверке и
-                калибровке средств измерений, стремясь к постоянному развитию и
-                высокому стандарту качества
+                <?php the_field('slajder_pravyj_blok_tekst_dva', 'options');?>
                 </p>
-                <a href="#" class="slider-block__right-btn btn">Все документы</a>
+                <a href="<?php the_field('slajder_pravyj_blok_ssylka', 'options');?>" class="slider-block__right-btn btn">Все документы</a>
             </div>
             </div>
             <a
@@ -404,70 +282,24 @@
             <div class="reviews__title title">Отзывы наших клиентов</div>
             <div class="reviews-slider">
             <div class="reviews-slider__inner">
+                <?php if(have_rows('otzyvy_element', 'options')) : while(have_rows('otzyvy_element', 'options')) : the_row();?>
                 <div class="reviews-slider__wrapper">
-                <div class="reviews-slider__item">
-                    <div class="reviews-slider__item-img">
-                    <img src="./images/tests/reviews-1.png" alt="img" />
+                    <div class="reviews-slider__item">
+                        <div class="reviews-slider__item-img">
+                        <img src="<?php the_sub_field('otzyvy_element_izobrazhenie', 'options');?>" alt="img" />
+                        </div>
+                        <div class="reviews-slider__item-text">
+                        <?php the_sub_field('otzyvy_element_tekst', 'options');?>
+                        </div>
+                        <div class="reviews-slider__item-name">
+                        <?php the_sub_field('otzyvy_element_imya', 'options');?>
+                        </div>
+                        <div class="reviews-slider__item-job">
+                        <?php the_sub_field('otzyvy_element_dolzhnost', 'options');?>
+                        </div>
                     </div>
-                    <div class="reviews-slider__item-text">
-                    Трудолюбивые сотрудники, честная организация. Оставленную на
-                    сайте заявку обрабатывают практически моментально. Бывало,
-                    вносим правки, при этом негатива не испытываем. Наоборот,
-                    менеджеры, тут же реагируют и выполняют обновленный заказ.
-                    Инструмент получаем в срок с соответствующей документацией.
-                    </div>
-                    <div class="reviews-slider__item-name">Михаил Иджян</div>
-                    <div class="reviews-slider__item-job">Директор</div>
                 </div>
-                </div>
-                <div class="reviews-slider__wrapper">
-                <div class="reviews-slider__item">
-                    <div class="reviews-slider__item-img">
-                    <img src="./images/tests/reviews-2.png" alt="img" />
-                    </div>
-                    <div class="reviews-slider__item-text">
-                    Трудолюбивые сотрудники, честная организация. Оставленную на
-                    сайте заявку обрабатывают практически моментально. Бывало,
-                    вносим правки, при этом негатива не испытываем. Наоборот,
-                    менеджеры, тут же реагируют и выполняют обновленный заказ.
-                    Инструмент получаем в срок с соответствующей документацией.
-                    </div>
-                    <div class="reviews-slider__item-name">Михаил Иджян</div>
-                    <div class="reviews-slider__item-job">Директор</div>
-                </div>
-                </div>
-                <div class="reviews-slider__wrapper">
-                <div class="reviews-slider__item">
-                    <div class="reviews-slider__item-img">
-                    <img src="./images/tests/reviews-3.png" alt="img" />
-                    </div>
-                    <div class="reviews-slider__item-text">
-                    Трудолюбивые сотрудники, честная организация. Оставленную на
-                    сайте заявку обрабатывают практически моментально. Бывало,
-                    вносим правки, при этом негатива не испытываем. Наоборот,
-                    менеджеры, тут же реагируют и выполняют обновленный заказ.
-                    Инструмент получаем в срок с соответствующей документацией.
-                    </div>
-                    <div class="reviews-slider__item-name">Михаил Иджян</div>
-                    <div class="reviews-slider__item-job">Директор</div>
-                </div>
-                </div>
-                <div class="reviews-slider__wrapper">
-                <div class="reviews-slider__item">
-                    <div class="reviews-slider__item-img">
-                    <img src="./images/tests/reviews-1.png" alt="img" />
-                    </div>
-                    <div class="reviews-slider__item-text">
-                    Трудолюбивые сотрудники, честная организация. Оставленную на
-                    сайте заявку обрабатывают практически моментально. Бывало,
-                    вносим правки, при этом негатива не испытываем. Наоборот,
-                    менеджеры, тут же реагируют и выполняют обновленный заказ.
-                    Инструмент получаем в срок с соответствующей документацией.
-                    </div>
-                    <div class="reviews-slider__item-name">Михаил Иджян</div>
-                    <div class="reviews-slider__item-job">Директор</div>
-                </div>
-                </div>
+                <?php endwhile; endif;?>
             </div>
             <div class="reviews-slider__arrows"></div>
             </div>
@@ -479,17 +311,17 @@
             <div class="yandex-box">
             <div class="yandex-box__item">
                 <div class="yandex-box__item-img">
-                <img src="./images/tests/rate-1.png" alt="img" />
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/rate-1.png" alt="img" />
                 </div>
             </div>
             <div class="yandex-box__item">
                 <div class="yandex-box__item-img">
-                <img src="./images/tests/rate-2.png" alt="img" />
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/rate-2.png" alt="img" />
                 </div>
             </div>
             <div class="yandex-box__item">
                 <div class="yandex-box__item-img">
-                <img src="./images/tests/rate.png" alt="img" />
+                <img src="<?php echo get_template_directory_uri()?>/assets/images/tests/rate.png" alt="img" />
                 </div>
             </div>
             </div>
@@ -498,83 +330,34 @@
 
     <section class="form">
         <div class="container">
-            <h3 class="form__title subtitle">Получить консультацию</h3>
-            <div class="form-block">
+          <h3 class="form__title subtitle">Получить консультацию</h3>
+          <div class="form-block">
             <div class="form-block__content">
-                <div class="form-block__item">
-                <p class="form-block__item-text">Телефон</p>
-                <a href="tel:+74957969275" class="form-block__item-name">
-                    +7 (495) 796-92-75
-                </a>
-                <img
-                    src="./images/home/call-form.svg"
-                    alt="img"
-                    class="form-block__item-img"
-                />
+              <?php if(have_rows('poluchit_konsultacziyu_element', 'options')) : while(have_rows('poluchit_konsultacziyu_element', 'options')) : the_row();?>
+              <div class="form-block__item">
+                <p class="form-block__item-text">
+                <?php the_sub_field('poluchit_konsultacziyu_element_tekst', 'options');?>
+                </p>
+                <div  class="form-block__item-name">
+                <?php the_sub_field('poluchit_konsultacziyu_element_zagolovok', 'options');?>
                 </div>
-                <div class="form-block__item">
-                <p class="form-block__item-text">Почта</p>
-                <a
-                    href="mailto:info@calibronrmc.ru"
-                    class="form-block__item-name"
-                >
-                    info@calibronrmc.ru
-                </a>
                 <img
-                    src="./images/home/mail-form.svg"
-                    alt="img"
-                    class="form-block__item-img"
+                  src=" <?php the_sub_field('poluchit_konsultacziyu_element_izobrazhenie', 'options');?>"
+                  alt="img"
+                  class="form-block__item-img"
                 />
-                </div>
-                <div class="form-block__item">
-                <p class="form-block__item-text">По будням</p>
-                <div class="form-block__item-name">08:45-17:30</div>
-                <img
-                    src="./images/home/alarm-form.svg"
-                    alt="img"
-                    class="form-block__item-img"
-                />
-                </div>
-                <div class="form-block__item">
-                <p class="form-block__item-text">Москва</p>
-                <div class="form-block__item-name">Электродная 2, с. 23</div>
-                <img
-                    src="./images/home/location_on-form.svg"
-                    alt="img"
-                    class="form-block__item-img"
-                />
-                </div>
+              </div>
+              <?php endwhile; endif;?>
             </div>
 
-            <form class="form-block__info">
-                <p class="form-block__info-text">
+            <div class="form-block__info">
+              <p class="form-block__info-text">
                 Наш менеджер свяжется с вами и ответит на все интересующие
                 вопросы
-                </p>
-                <div
-                class="form-block__info-wrapper form-block__info-wrapper--user"
-                >
-                <input
-                    type="text"
-                    class="form-block__info-input"
-                    placeholder="Имя"
-                    required
-                />
-                </div>
-
-                <div
-                class="form-block__info-wrapper form-block__info-wrapper--phone"
-                >
-                <input
-                    type="text"
-                    class="form-block__info-input"
-                    placeholder="Телефон"
-                    required
-                />
-                </div>
-                <button class="form-block__info-btn btn">Ждем звонка!</button>
-            </form>
+              </p>
+              <?php echo do_shortcode('[contact-form-7 id="d96f30b" title="Форма консультация"]')?>
             </div>
+          </div>
         </div>
     </section>
 </main>

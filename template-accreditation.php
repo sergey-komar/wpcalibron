@@ -30,143 +30,34 @@
           </h3>
           <div class="documentation-block">
             <div class="documentation-block__left">
+              <?php if(have_rows('akkreditaczii_dokumenty_element')) : while(have_rows('akkreditaczii_dokumenty_element')) : the_row();?>
               <div class="documentation-block__item">
                 <div class="documentation-block__item-img">
-                  <img
-                    src="./images/accreditation/documentation-1.jpg"
-                    alt="img"
-                  />
+                  <img src="<?php the_sub_field('akkreditaczii_dokumenty_element_izobrazhenie');?>" alt="img"/>
                 </div>
                 <div class="documentation-block__item-title">
-                  Область аккредитации калибровка
+                  <?php the_sub_field('akkreditaczii_dokumenty_element_zagolovok');?>
                 </div>
               </div>
-              <div class="documentation-block__item">
-                <div class="documentation-block__item-img">
-                  <img
-                    src="./images/accreditation/documentation-2.jpg"
-                    alt="img"
-                  />
-                </div>
-                <div class="documentation-block__item-title">
-                  Подтверждение компетенции
-                </div>
-              </div>
-              <div class="documentation-block__item">
-                <div class="documentation-block__item-img">
-                  <img
-                    src="./images/accreditation/documentation-3.jpg"
-                    alt="img"
-                  />
-                </div>
-                <div class="documentation-block__item-title">
-                  Свидетельство регистрации
-                </div>
-              </div>
-              <div class="documentation-block__item">
-                <div class="documentation-block__item-img">
-                  <img
-                    src="./images/accreditation/documentation-4.jpg"
-                    alt="img"
-                  />
-                </div>
-                <div class="documentation-block__item-title">
-                  Область аккредитации поверка
-                </div>
-              </div>
-              <div class="documentation-block__item">
-                <div class="documentation-block__item-img">
-                  <img
-                    src="./images/accreditation/documentation-5.jpg"
-                    alt="img"
-                  />
-                </div>
-                <div class="documentation-block__item-title">
-                  Приказ об аккредитации
-                </div>
-              </div>
-              <div class="documentation-block__item">
-                <div class="documentation-block__item-img">
-                  <img
-                    src="./images/accreditation/documentation-6.jpg"
-                    alt="img"
-                  />
-                </div>
-                <div class="documentation-block__item-title">
-                  Приказ на шифр
-                </div>
-              </div>
+             <?php endwhile; endif;?>
             </div>
 
             <div class="documentation-block__right">
+              <?php if(have_rows('akkreditacziya_fajl_element')) : while(have_rows('akkreditacziya_fajl_element')) : the_row();?>
               <div class="documentation-block__download">
                 <div class="documentation-block__download-img">
-                  <img
-                    src="./images/accreditation/documentation-word.png"
-                    alt="img"
-                  />
-                </div>
-                <div class="documentation-block__info">
-                  <div class="documentation-block__info-title">Реквизиты</div>
-                  <a href="#" class="documentation-block__info-link">Скачать</a>
-                </div>
-              </div>
-              <div class="documentation-block__download">
-                <div class="documentation-block__download-img">
-                  <img
-                    src="./images/accreditation/documentation-word.png"
-                    alt="img"
-                  />
+                  <img src="<?php the_sub_field('akkreditacziya_fajl_element_ikonka');?>" alt="img"/>
                 </div>
                 <div class="documentation-block__info">
                   <div class="documentation-block__info-title">
-                    Договор на оказание услуг
+                  <?php the_sub_field('akkreditacziya_fajl_element_tekst');?>
                   </div>
-                  <a href="#" class="documentation-block__info-link">Скачать</a>
+                  <a href="<?php the_sub_field('akkreditacziya_fajl_element_skachat');?>" class="documentation-block__info-link">
+                    Скачать
+                  </a>
                 </div>
               </div>
-              <div class="documentation-block__download">
-                <div class="documentation-block__download-img">
-                  <img
-                    src="./images/accreditation/documentation-word.png"
-                    alt="img"
-                  />
-                </div>
-                <div class="documentation-block__info">
-                  <div class="documentation-block__info-title">
-                    Приказ Минпромторга по поверкам
-                  </div>
-                  <a href="#" class="documentation-block__info-link">Скачать</a>
-                </div>
-              </div>
-              <div class="documentation-block__download">
-                <div class="documentation-block__download-img">
-                  <img
-                    src="./images/accreditation/documentation-word.png"
-                    alt="img"
-                  />
-                </div>
-                <div class="documentation-block__info">
-                  <div class="documentation-block__info-title">
-                    Закон об обеспечении единства измерений
-                  </div>
-                  <a href="#" class="documentation-block__info-link">Скачать</a>
-                </div>
-              </div>
-              <div class="documentation-block__download">
-                <div class="documentation-block__download-img">
-                  <img
-                    src="./images/accreditation/documentation-word.png"
-                    alt="img"
-                  />
-                </div>
-                <div class="documentation-block__info">
-                  <div class="documentation-block__info-title">
-                    Изменение в Федеральном законе №102-Ф3
-                  </div>
-                  <a href="#" class="documentation-block__info-link">Скачать</a>
-                </div>
-              </div>
+              <?php endwhile; endif;?>
             </div>
           </div>
         </div>
@@ -293,79 +184,30 @@
           <h3 class="form__title subtitle">Получить консультацию</h3>
           <div class="form-block">
             <div class="form-block__content">
+              <?php if(have_rows('poluchit_konsultacziyu_element', 'options')) : while(have_rows('poluchit_konsultacziyu_element', 'options')) : the_row();?>
               <div class="form-block__item">
-                <p class="form-block__item-text">Телефон</p>
-                <a href="tel:+74957969275" class="form-block__item-name">
-                  +7 (495) 796-92-75
-                </a>
+                <p class="form-block__item-text">
+                <?php the_sub_field('poluchit_konsultacziyu_element_tekst', 'options');?>
+                </p>
+                <div  class="form-block__item-name">
+                <?php the_sub_field('poluchit_konsultacziyu_element_zagolovok', 'options');?>
+                </div>
                 <img
-                  src="./images/home/call-form.svg"
+                  src=" <?php the_sub_field('poluchit_konsultacziyu_element_izobrazhenie', 'options');?>"
                   alt="img"
                   class="form-block__item-img"
                 />
               </div>
-              <div class="form-block__item">
-                <p class="form-block__item-text">Почта</p>
-                <a
-                  href="mailto:info@calibronrmc.ru"
-                  class="form-block__item-name"
-                >
-                  info@calibronrmc.ru
-                </a>
-                <img
-                  src="./images/home/mail-form.svg"
-                  alt="img"
-                  class="form-block__item-img"
-                />
-              </div>
-              <div class="form-block__item">
-                <p class="form-block__item-text">По будням</p>
-                <div class="form-block__item-name">08:45-17:30</div>
-                <img
-                  src="./images/home/alarm-form.svg"
-                  alt="img"
-                  class="form-block__item-img"
-                />
-              </div>
-              <div class="form-block__item">
-                <p class="form-block__item-text">Москва</p>
-                <div class="form-block__item-name">Электродная 2, с. 23</div>
-                <img
-                  src="./images/home/location_on-form.svg"
-                  alt="img"
-                  class="form-block__item-img"
-                />
-              </div>
+              <?php endwhile; endif;?>
             </div>
 
-            <form class="form-block__info">
+            <div class="form-block__info">
               <p class="form-block__info-text">
                 Наш менеджер свяжется с вами и ответит на все интересующие
                 вопросы
               </p>
-              <div
-                class="form-block__info-wrapper form-block__info-wrapper--user"
-              >
-                <input
-                  type="text"
-                  class="form-block__info-input"
-                  placeholder="Имя"
-                  required
-                />
-              </div>
-
-              <div
-                class="form-block__info-wrapper form-block__info-wrapper--phone"
-              >
-                <input
-                  type="text"
-                  class="form-block__info-input"
-                  placeholder="Телефон"
-                  required
-                />
-              </div>
-              <button class="form-block__info-btn btn">Ждем звонка!</button>
-            </form>
+              <?php echo do_shortcode('[contact-form-7 id="d96f30b" title="Форма консультация"]')?>
+            </div>
           </div>
         </div>
       </section>

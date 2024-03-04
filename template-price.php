@@ -14,6 +14,77 @@
         </div>
       </div>
 
+
+      <section class="accreditation">
+        <div class="container">
+          <div class="accreditation__inner">
+            <div class="search">
+              <?php echo do_shortcode( '[wpdreams_ajaxsearchlite]' ); ?>
+            </div>
+          
+            <div class="accreditation-table">
+              <div class="accreditation-table__inner">
+                <div class="accreditation-table__headers">
+                  <div class="accreditation-table__headers-num accreditation-table__headers-item">№ п/п</div>
+                  <div class="accreditation-table__headers-name accreditation-table__headers-item">
+                    Наименование инструмента/прибора/услуги
+                  </div>
+                  <div class="accreditation-table__headers-range accreditation-table__headers-item">
+                    Цена поверки, рублей.
+                  </div>
+                  <div class="accreditation-table__headers-class accreditation-table__headers-item">
+                    Цена калибровки, рублей.
+                  </div>
+                </div>
+               
+                <?php
+                    global $post;
+                    $price = new WP_Query([
+                        'post_type' => 'news',
+                        'posts_per_page' => 4,
+                        'paged' => $paged,
+                        'order' => 'ASC'
+                        
+                    ])
+                ?>
+                 <?php if( $price->have_posts()) : while($price->have_posts()) : $price->the_post();?>
+                <div class="accreditation-table__item">
+                  <div class="accreditation-table__item-num accreditation-table__item-element">
+                    <?php the_field('nomer');?>
+                  </div>
+                  <div class="accreditation-table__item-name accreditation-table__item-element">
+                    <?php the_title();?>
+                  </div>
+                  <div class="accreditation-table__item-range accreditation-table__item-element">
+                  <?php the_field('czena_poverki');?>
+                  </div>
+                  <div class="accreditation-table__item-class accreditation-table__item-element">
+                  <?php the_field('czena_kalibrovki');?>
+                  </div>
+                </div>
+                <?php endwhile; endif;?>
+                <?php wp_reset_postdata();?>
+              </div>
+            </div>
+           
+            <div class="pagination">
+              <?php
+                  $big = 999999999; // need an unlikely integer
+
+                  echo paginate_links( array(
+                      'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                      'format' => '?paged=%#%',
+                      'current' => max( 1, get_query_var('paged') ),
+                      'total' => $price->max_num_pages,
+                      'prev_text'    => __('« Назад'),
+                      'next_text'    => __('Вперёд »'),
+                  ) );
+                ?>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="price">
         <div class="container">
           <h1 class="price__title title">Прайс-лист</h1>
@@ -125,153 +196,35 @@
         </div>
       </section>
 
-      <section class="accreditation">
-        <div class="container">
-          <div class="accreditation__inner">
-            <div class="search">
-              <?php echo do_shortcode( '[wpdreams_ajaxsearchlite]' ); ?>
-            </div>
-          
-            <div class="accreditation-table">
-              <div class="accreditation-table__inner">
-                <div class="accreditation-table__headers">
-                  <div class="accreditation-table__headers-num accreditation-table__headers-item">№ п/п</div>
-                  <div class="accreditation-table__headers-name accreditation-table__headers-item">
-                    Наименование инструмента/прибора/услуги
-                  </div>
-                  <div class="accreditation-table__headers-range accreditation-table__headers-item">
-                    Цена поверки, рублей.
-                  </div>
-                  <div class="accreditation-table__headers-class accreditation-table__headers-item">
-                    Цена калибровки, рублей.
-                  </div>
-                </div>
-               
-                <?php
-                    global $post;
-                    $price = new WP_Query([
-                        'post_type' => 'news',
-                        'posts_per_page' => 4,
-                        'paged' => $paged,
-                        
-                    ])
-                ?>
-                 <?php if( $price->have_posts()) : while($price->have_posts()) : $price->the_post();?>
-                <div class="accreditation-table__item">
-                  <div class="accreditation-table__item-num accreditation-table__item-element">
-                    <?php the_field('nomer');?>
-                  </div>
-                  <div class="accreditation-table__item-name accreditation-table__item-element">
-                    <?php the_title();?>
-                  </div>
-                  <div class="accreditation-table__item-range accreditation-table__item-element">
-                  <?php the_field('czena_poverki');?>
-                  </div>
-                  <div class="accreditation-table__item-class accreditation-table__item-element">
-                  <?php the_field('czena_kalibrovki');?>
-                  </div>
-                </div>
-                <?php endwhile; endif;?>
-                <?php wp_reset_postdata();?>
-              </div>
-            </div>
-           
-            <div class="pagination">
-              <?php
-                  $big = 999999999; // need an unlikely integer
-
-                  echo paginate_links( array(
-                      'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                      'format' => '?paged=%#%',
-                      'current' => max( 1, get_query_var('paged') ),
-                      'total' => $price->max_num_pages,
-                      'prev_text'    => __('« Назад'),
-                      'next_text'    => __('Вперёд »'),
-                  ) );
-                ?>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="form">
         <div class="container">
           <h3 class="form__title subtitle">Получить консультацию</h3>
           <div class="form-block">
             <div class="form-block__content">
+              <?php if(have_rows('poluchit_konsultacziyu_element', 'options')) : while(have_rows('poluchit_konsultacziyu_element', 'options')) : the_row();?>
               <div class="form-block__item">
-                <p class="form-block__item-text">Телефон</p>
-                <a href="tel:+74957969275" class="form-block__item-name">
-                  +7 (495) 796-92-75
-                </a>
+                <p class="form-block__item-text">
+                <?php the_sub_field('poluchit_konsultacziyu_element_tekst', 'options');?>
+                </p>
+                <div  class="form-block__item-name">
+                <?php the_sub_field('poluchit_konsultacziyu_element_zagolovok', 'options');?>
+                </div>
                 <img
-                  src="<?php echo get_template_directory_uri()?>/assets/images/home/call-form.svg"
+                  src=" <?php the_sub_field('poluchit_konsultacziyu_element_izobrazhenie', 'options');?>"
                   alt="img"
                   class="form-block__item-img"
                 />
               </div>
-              <div class="form-block__item">
-                <p class="form-block__item-text">Почта</p>
-                <a
-                  href="mailto:info@calibronrmc.ru"
-                  class="form-block__item-name"
-                >
-                  info@calibronrmc.ru
-                </a>
-                <img
-                  src="<?php echo get_template_directory_uri()?>/assets/images/home/mail-form.svg"
-                  alt="img"
-                  class="form-block__item-img"
-                />
-              </div>
-              <div class="form-block__item">
-                <p class="form-block__item-text">По будням</p>
-                <div class="form-block__item-name">08:45-17:30</div>
-                <img
-                  src="<?php echo get_template_directory_uri()?>/assets/images/home/alarm-form.svg"
-                  alt="img"
-                  class="form-block__item-img"
-                />
-              </div>
-              <div class="form-block__item">
-                <p class="form-block__item-text">Москва</p>
-                <div class="form-block__item-name">Электродная 2, с. 23</div>
-                <img
-                  src="<?php echo get_template_directory_uri()?>/assets/images/home/location_on-form.svg"
-                  alt="img"
-                  class="form-block__item-img"
-                />
-              </div>
+              <?php endwhile; endif;?>
             </div>
 
-            <form class="form-block__info">
+            <div class="form-block__info">
               <p class="form-block__info-text">
                 Наш менеджер свяжется с вами и ответит на все интересующие
                 вопросы
               </p>
-              <div
-                class="form-block__info-wrapper form-block__info-wrapper--user"
-              >
-                <input
-                  type="text"
-                  class="form-block__info-input"
-                  placeholder="Имя"
-                  required
-                />
-              </div>
-
-              <div
-                class="form-block__info-wrapper form-block__info-wrapper--phone"
-              >
-                <input
-                  type="text"
-                  class="form-block__info-input"
-                  placeholder="Телефон"
-                  required
-                />
-              </div>
-              <button class="form-block__info-btn btn">Ждем звонка!</button>
-            </form>
+              <?php echo do_shortcode('[contact-form-7 id="d96f30b" title="Форма консультация"]')?>
+            </div>
           </div>
         </div>
       </section>
