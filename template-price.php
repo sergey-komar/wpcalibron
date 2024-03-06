@@ -15,75 +15,7 @@
       </div>
 
 
-      <section class="accreditation">
-        <div class="container">
-          <div class="accreditation__inner">
-            <div class="search">
-              <?php echo do_shortcode( '[wpdreams_ajaxsearchlite]' ); ?>
-            </div>
-          
-            <div class="accreditation-table">
-              <div class="accreditation-table__inner">
-                <div class="accreditation-table__headers">
-                  <div class="accreditation-table__headers-num accreditation-table__headers-item">№ п/п</div>
-                  <div class="accreditation-table__headers-name accreditation-table__headers-item">
-                    Наименование инструмента/прибора/услуги
-                  </div>
-                  <div class="accreditation-table__headers-range accreditation-table__headers-item">
-                    Цена поверки, рублей.
-                  </div>
-                  <div class="accreditation-table__headers-class accreditation-table__headers-item">
-                    Цена калибровки, рублей.
-                  </div>
-                </div>
-               
-                <?php
-                    global $post;
-                    $price = new WP_Query([
-                        'post_type' => 'news',
-                        'posts_per_page' => 4,
-                        'paged' => $paged,
-                        'order' => 'ASC'
-                        
-                    ])
-                ?>
-                 <?php if( $price->have_posts()) : while($price->have_posts()) : $price->the_post();?>
-                <div class="accreditation-table__item">
-                  <div class="accreditation-table__item-num accreditation-table__item-element">
-                    <?php the_field('nomer');?>
-                  </div>
-                  <div class="accreditation-table__item-name accreditation-table__item-element">
-                    <?php the_title();?>
-                  </div>
-                  <div class="accreditation-table__item-range accreditation-table__item-element">
-                  <?php the_field('czena_poverki');?>
-                  </div>
-                  <div class="accreditation-table__item-class accreditation-table__item-element">
-                  <?php the_field('czena_kalibrovki');?>
-                  </div>
-                </div>
-                <?php endwhile; endif;?>
-                <?php wp_reset_postdata();?>
-              </div>
-            </div>
-           
-            <div class="pagination">
-              <?php
-                  $big = 999999999; // need an unlikely integer
-
-                  echo paginate_links( array(
-                      'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                      'format' => '?paged=%#%',
-                      'current' => max( 1, get_query_var('paged') ),
-                      'total' => $price->max_num_pages,
-                      'prev_text'    => __('« Назад'),
-                      'next_text'    => __('Вперёд »'),
-                  ) );
-                ?>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       <section class="price">
         <div class="container">
@@ -196,6 +128,16 @@
         </div>
       </section>
 
+      <div class="accreditation">
+        <div class="container">
+          <div class="accreditation__inner">
+          <?php if(get_field('tablicza_prajsa'))
+          echo do_shortcode(''.get_field('tablicza_prajsa').'');?>
+          </div> 
+        </div>
+      </div>
+     
+
       <section class="form">
         <div class="container">
           <h3 class="form__title subtitle">Получить консультацию</h3>
@@ -228,5 +170,7 @@
           </div>
         </div>
       </section>
+     
+     
     </main>
 <?php get_footer();?>

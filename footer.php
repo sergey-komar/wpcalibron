@@ -3,7 +3,8 @@
         <?php
           $catalog__terms = get_terms([
             'taxonomy' => 'product_cat',
-            'child_of' => 0,
+           'number' => 25
+            // 'child_of' => 0,
             // 'orderby'     => 'id', // здесь по какому полю сортировать
             // 'hide_empty'  => false, // скрывать категории без товаров или нет
             // 'parent'      => 0, // id родительской категории
@@ -23,39 +24,22 @@
           </a>
 
           <div class="footer-block__info">
-            <ul class="footer-block__menu">
-              <li>
-                <a href="#">Отзывы</a>
-              </li>
-              <li>
-                <a href="#">Аккредитация</a>
-              </li>
-              <li>
-                <a href="#">Информация</a>
-              </li>
-            </ul>
-            <ul class="footer-block__menu">
-              <li>
-                <a href="#">О компании</a>
-              </li>
-              <li>
-                <a href="#">Вакансии</a>
-              </li>
-              <li>
-                <a href="#">Свидетельство о поверке</a>
-              </li>
-            </ul>
-            <ul class="footer-block__menu">
-              <li>
-                <a href="#">Справка об обезжиривании</a>
-              </li>
-              <li>
-                <a href="#">Пользовательское соглашение</a>
-              </li>
-              <li>
-                <a href="#">Политика конфиденциальности</a>
-              </li>
-            </ul>
+           
+            <?php wp_nav_menu([
+              'theme_location' => 'menu-footer',
+              'container' => '',
+              'menu_class' => 'footer-block__menu'
+            ])?>
+             <?php wp_nav_menu([
+              'theme_location' => 'menu-footer-one',
+              'container' => '',
+              'menu_class' => 'footer-block__menu'
+            ])?>
+             <?php wp_nav_menu([
+              'theme_location' => 'menu-footer-two',
+              'container' => '',
+              'menu_class' => 'footer-block__menu'
+            ])?>
           </div>
         </div>
 

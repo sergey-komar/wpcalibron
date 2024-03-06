@@ -85,33 +85,21 @@ if ( post_password_required() ) {
          
           <div class="tabs__content">
             <div class="accreditation__inner">
-              <div class="accreditation-table">
-                <div class="accreditation-table__inner">
-                  <div class="accreditation-table__headers">
-				  	<?php if(have_rows('zagolovok')) : while(have_rows('zagolovok')) : the_row();?>
-                    <div class="accreditation-table__headers-num accreditation-table__headers-item">
-					<?php the_sub_field('imya_zagolovka');?>
-					</div>
-					<?php endwhile; endif;?>
-                  </div>
-                
-				  <?php if(have_rows('harakteristiki')) : while(have_rows('harakteristiki')) : the_row();?>
-                  <div class="accreditation-table__item">
-				  	<?php if(have_rows('harakteristiki_element')) : while(have_rows('harakteristiki_element')) : the_row();?>
-                    <div class="accreditation-table__item-num accreditation-table__item-element">
-					<?php the_sub_field('harakteristiki_element_tekst');?>
-					</div>
-					<?php endwhile; endif;?>
-                  </div>
-				  <?php endwhile; endif;?>
-                </div>
-              </div>
+           
+			  	<?php if(get_field('tablicza_v_tovare'))
+				echo do_shortcode(''.get_field('tablicza_v_tovare').'');?>
+				<?php the_content();?>
             </div>
           </div>
-         
 		  <div class="tabs__content">
-				<!-- <?php echo $product->description;?>	 -->
-				<?php the_content();?>
+		
+			 <!-- <?php if(get_field('tablicza_dopolnitelnaya_informacziya'))
+          	echo do_shortcode(get_field('tablicza_dopolnitelnaya_informacziya'));?>  -->
+			<?php echo $product->short_description;?>
+          </div>
+
+		  <div class="tabs__content">
+		
           </div>
 
         </div>
