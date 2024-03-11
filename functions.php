@@ -4,11 +4,12 @@ function calibron_script() {
     wp_enqueue_style('calibron-style', get_template_directory_uri() . '/assets/css/style.min.css', [], '2024', 'all');
     wp_enqueue_style('calibron-custom', get_template_directory_uri() . '/assets/css/custom.css', [], '2024', 'all');
 
+    
     wp_enqueue_script('calibron-js', get_template_directory_uri() . '/assets/js/main.min.js', [], '2024', true);
 }
 
 add_action('wp_enqueue_scripts', 'calibron_script');
-
+background: linear-gradient(180.00deg, rgb(255, 4, 141),rgb(204, 29, 134) 100%);
 
 function calibron() {
     add_theme_support('title-tag');
@@ -32,7 +33,7 @@ if( function_exists('acf_add_options_page') ) {
 	
     acf_add_options_page(array(
         'page_title' 	=> 'Основные настройки',
-        'menu_title'	=> 'Настройки шапки и подвала',
+        'menu_title'	=> 'Настройки шапки и подвала + другие настройки',
         'menu_slug' 	=> 'theme-general-settings',
         'capability'	=> 'edit_posts',
         'redirect'		=> false

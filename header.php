@@ -12,22 +12,22 @@
       <div class="container">
         <div class="header-top">
           <a
-            href="tel:+74957969275"
+            href="tel:<?php the_field('telefon_v_shapke_ssylka', 'options');?>"
             class="header-top__info header-top__info--tel"
           >
-            +7 (495) 796-92-75
+            <?php the_field('telefon_v_shapke', 'options');?>
           </a>
           <a
-            href="mailto:info@calibronrmc.ru"
+            href="mailto:<?php the_field('pochta_v_shapke', 'options');?>"
             class="header-top__info header-top__info--email"
           >
-            info@calibronrmc.ru
+          <?php the_field('pochta_v_shapke', 'options');?>
           </a>
           <p class="header-top__info header-top__info--time">
-            Пн - Пт 8:45-17:30
+          <?php the_field('vremya_raboty_v_shapke', 'options');?>
           </p>
           <p class="header-top__info header-top__info--address">
-            г. Москва, Электродная 2, с. 23
+          <?php the_field('adres_v_shapke', 'options');?>
           </p>
         </div>
       </div>
@@ -45,7 +45,7 @@
               </div>
             </div>
             <a href="/" class="logo">
-              <img src="<?php echo get_template_directory_uri()?>/assets/images/home/header-logo.svg" alt="img" />
+              <img src="<?php the_field('logotip', 'options');?>" alt="img" />
             </a>
               <div class="menu__wrraper">
               <?php wp_nav_menu([
@@ -65,10 +65,10 @@
               </button>
             </div>
               <div class="mobile-content">
-                <a href="mailto:info@calibronrmc.ru" class="mobile-content__email">
+                <a href="mailto:<?php the_field('pochta_v_shapke', 'options');?>" class="mobile-content__email">
                   <img src="<?php echo get_template_directory_uri()?>/assets/images/home/mobile-mail.svg" alt="img">
                 </a>
-                <a href="tel:+74957969275" class="mobile-content__phone">
+                <a href="tel:<?php the_field('telefon_v_shapke_ssylka', 'options');?>" class="mobile-content__phone">
                   <img src="<?php echo get_template_directory_uri()?>/assets/images/home/mobile-call.svg" alt="img">
                 </a>
               </div>

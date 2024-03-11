@@ -20,7 +20,7 @@
       <div class="container">
         <div class="footer-block">
           <a href="/" class="logo logo--footer">
-            <img src="<?php echo get_template_directory_uri()?>/assets/images/home/header-logo.svg" alt="img" />
+            <img src="<?php the_field('logotip', 'options');?>" alt="img" />
           </a>
 
           <div class="footer-block__info">
@@ -55,21 +55,21 @@
 
         <div class="footer-bottom">
           <a
-            href="tel:+74957969275"
+            href="tel:<?php the_field('telefon_v_shapke_ssylka', 'options');?>"
             class="footer-bottom__info footer-bottom__info--tel"
-            >+7 (495) 796-92-75</a
+            ><?php the_field('telefon_v_shapke', 'options');?></a
           >
           <a
-            href="mailto:info@calibronrmc.ru"
+            href="mailto:<?php the_field('pochta_v_shapke', 'options');?>"
             class="footer-bottom__info footer-bottom__info--email"
           >
-            info@calibronrmc.ru
+          <?php the_field('pochta_v_shapke', 'options');?>
           </a>
           <p class="footer-bottom__info footer-bottom__info--time">
-            Пн - Пт 8:45-17:30
+          <?php the_field('vremya_raboty_v_shapke', 'options');?>
           </p>
           <p class="footer-bottom__info footer-bottom__info--address">
-            г. Москва, Электродная 2, с. 23
+          <?php the_field('adres_v_shapke', 'options');?>
           </p>
         </div>
       </div>

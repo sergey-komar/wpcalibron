@@ -147,12 +147,15 @@ div.asl_w .probox .proinput input::placeholder {
 }
 
 .row-hover tr td {
-    min-width: 65px !important;
+    min-width: 80px !important;
 }
 
-/* .tabs__content.show .dataTables_scrollHeadInner {
-    width: 100% !important;
-} */
+
+
+.accreditation__inner-table .dataTables_scrollHeadInner {
+    /* width: 100% !important; */
+    /* overflow: auto; */
+}
 
 
 .alignnone.size-medium {
@@ -167,6 +170,17 @@ div.asl_w .probox .proinput input::placeholder {
 .tabs__content p {
     margin-bottom: 1.5rem;
 }
+
+.accreditation__inner-scroll {
+    overflow: auto;
+}
+
+
+
+
+
+
+
 
 
 @media(max-width: 968px) {
@@ -248,9 +262,11 @@ div.asl_w .probox .proinput input::placeholder {
         line-height: 19px;
     }
 
-    .tabs__content.show .dataTables_scrollHeadInner {
-        /* width: 100 !important;
-        overflow: auto; */
+    /* .accreditation__inner-table .dataTables_scrollHeadInner {
+        width: unset !important;
+    } */
+    .tabs__item {
+        gap: 1rem;
     }
 
 }

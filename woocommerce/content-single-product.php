@@ -39,30 +39,22 @@ if ( post_password_required() ) {
 		</div>
 	</div>
 	<div class="product-box">
+		<?php if(have_rows('dannye_element')) : while(have_rows('dannye_element')) : the_row();?>
 		<div class="product-box__item">
-			<div class="product-box__item-text">Производитель</div>
-			<div class="product-box__item-name"><?php the_field('dannye_proizvoditel');?></div>
+
+			<?php if(!empty(get_sub_field('dannye_element_nazvanie'))) :?>
+			<div class="product-box__item-text">
+			<?php the_sub_field('dannye_element_nazvanie');?>
+			</div>
+			<?php endif;?>
+
+			<?php if(!empty(get_sub_field('dannye_element_tekst'))) :?>
+			<div class="product-box__item-name">
+			<?php the_sub_field('dannye_element_tekst');?>
+			</div>
+			<?php endif;?>
 		</div>
-		<div class="product-box__item">
-			<div class="product-box__item-text">Прибор</div>
-			<div class="product-box__item-name"><?php the_field('dannye_pribor');?></div>
-		</div>
-		<div class="product-box__item">
-			<div class="product-box__item-text">Категория</div>
-			<div class="product-box__item-name"><?php the_field('dannye_kategoriya');?></div>
-		</div>
-		<div class="product-box__item">
-			<div class="product-box__item-text">Номер в госреестре -</div>
-			<div class="product-box__item-name"><?php the_field('dannye_nomer');?></div>
-		</div>
-		<div class="product-box__item">
-			<div class="product-box__item-text">Срок поставки</div>
-			<div class="product-box__item-name"><?php the_field('dannye_srok_postavki');?></div>
-		</div>
-		<div class="product-box__item">
-			<div class="product-box__item-text">Страна производитель</div>
-			<div class="product-box__item-name"><?php the_field('dannye_strana');?></div>
-		</div>
+		<?php endwhile; endif;?>
 	</div>
 </section>
 	
@@ -91,15 +83,20 @@ if ( post_password_required() ) {
 				<?php the_content();?>
             </div>
           </div>
+			<div class="tabs__content">
+				<div class="accreditation__inner-table">
+					<div class="accreditation__inner">
+						<div class="accreditation__inner-scroll">
+						<?php if(get_field('tablicza_dopolnitelnaya_informacziya'))
+						echo do_shortcode(get_field('tablicza_dopolnitelnaya_informacziya'));?> 
+						</div>
+						
+						<?php echo $product->short_description;?>
+					</div>
+				</div>
+		  	</div>
 		  <div class="tabs__content">
-		
-			 <!-- <?php if(get_field('tablicza_dopolnitelnaya_informacziya'))
-          	echo do_shortcode(get_field('tablicza_dopolnitelnaya_informacziya'));?>  -->
-			<?php echo $product->short_description;?>
-          </div>
-
-		  <div class="tabs__content">
-		
+				<?php the_field('poslednyaya_vkladka_informacziya');?>
           </div>
 
         </div>
