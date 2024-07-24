@@ -11,9 +11,11 @@
         <div class="measurements-block">
         <div class="measurements-block__left">
             <div class="serch-mobile">
-            <form class="serch-mobile__form">
-                <input type="text" class="serch-mobile__form-input" placeholder="Поиск по сайту">
-            </form>
+
+            <div class="serch-mobile__form">
+            <?php aws_get_search_form( true ); ?>
+                <!-- <input type="text" class="serch-mobile__form-input" placeholder="Поиск по сайту"> -->
+            </div>
             </div>
             <p class="measurements-block__left-text">Предоставляем услуги с 2008 года</p>
             <h1 class="measurements-block__left-title title">
@@ -52,14 +54,14 @@
             </div>
             </div>
 
-            <div class="measurements-block__search">
-            <div class="measurements-block__search-title">Проверить статус заявки</div>
-            <form class="measurements-block__form">
-                <input type="text" class="measurements-block__form-input" placeholder="Введите номер заявки">
-                <button class="measurements-block__form-btn btn">Проверить</button>
-            </form>
-            </div>
-        </div>
+            <!-- <div class="measurements-block__search">
+                <div class="measurements-block__search-title">Проверить статус заявки</div>
+                    <form class="measurements-block__form">
+                        <input type="text" class="measurements-block__form-input" placeholder="Введите номер заявки">
+                        <button class="measurements-block__form-btn btn">Проверить</button>
+                    </form>
+                </div>
+            </div> -->
         </div>
     </div>
     </section>

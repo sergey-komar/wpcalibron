@@ -8,10 +8,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 <main class="main">
 	<div class="container">
 	<div class="breadcrumbs">
-		
-		<?php if(function_exists('bcn_display'))
+	<?php //woocommerce_breadcrumb();?>
+		 <?php if(function_exists('bcn_display'))
           {
               bcn_display();
-          }?>
+          }?> 
 	
 	</div>

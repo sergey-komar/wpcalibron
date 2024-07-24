@@ -31,14 +31,14 @@
           <div class="documentation-block">
             <div class="documentation-block__left">
               <?php if(have_rows('akkreditaczii_dokumenty_element')) : while(have_rows('akkreditaczii_dokumenty_element')) : the_row();?>
-              <div class="documentation-block__item">
+              <a href="<?php the_sub_field('akkreditaczii_dokumenty_element_ssylka');?>" class="documentation-block__item">
                 <div class="documentation-block__item-img">
                   <img src="<?php the_sub_field('akkreditaczii_dokumenty_element_izobrazhenie');?>" alt="img"/>
                 </div>
                 <div class="documentation-block__item-title">
                   <?php the_sub_field('akkreditaczii_dokumenty_element_zagolovok');?>
                 </div>
-              </div>
+              </a>
              <?php endwhile; endif;?>
             </div>
 

@@ -34,7 +34,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	?>
 
 
-	<div class="catalog-block__item-price"> от
+	<div class="catalog-block__item-price">
 	<?php
 	/**
 	 * Hook: woocommerce_after_shop_loop_item_title.
@@ -43,6 +43,10 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_template_loop_price - 10
 	 */
 	do_action( 'woocommerce_after_shop_loop_item_title' );
+	echo '<div class="catalog-block__item-hidden">' . the_field('czena_po_zaprosu') . '</div>';
+	echo '<div class="catalog-block__item-hidden">' . the_field('czena_ot') . '</div>';
+	echo $product->get_price_html();  
 	?>
 	</div>
+	
 </a>

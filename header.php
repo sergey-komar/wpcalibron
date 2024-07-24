@@ -6,6 +6,7 @@
    <?php wp_head();?>
   </head>
 
+  
   <body <?php body_class()?>>
     <?php wp_body_open();?>
     <header class="header">
@@ -47,6 +48,7 @@
             <a href="/" class="logo">
               <img src="<?php the_field('logotip', 'options');?>" alt="img" />
             </a>
+            
               <div class="menu__wrraper">
               <?php wp_nav_menu([
                   'theme_location' => 'menu-header',

@@ -27,3 +27,9 @@ add_filter( 'woocommerce_breadcrumb_defaults', function() {
 
 //Убираем похожие товара в карточке товара
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
+
+
+
+

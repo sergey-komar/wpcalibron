@@ -17,48 +17,81 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
+
+<h1 class="product__title"><?php echo $product->name;?></h1>
 <section class="device">
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'device-block', $product ); ?>>
+	<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'device-block', $product ); ?>>
 
-		<div class="device-block__img">
-		<?php
-		/**
-		 * Hook: woocommerce_before_single_product_summary.
-		 *
-		 * @hooked woocommerce_show_product_sale_flash - 10
-		 * @hooked woocommerce_show_product_images - 20
-		 */
-		do_action( 'woocommerce_before_single_product_summary' );
-		?>
-		<div class="device__price title">от <?php echo $product->price;?> ₽</div>
-		</div>
-		
-		<div class="tests-block__form">
-			<div class="tests-block__form-title name">Оставить заявку</div>
-				<?php echo do_shortcode('[contact-form-7 id="bc1a5e1" title="Форма в продукте"]')?>
-		</div>
-	</div>
-	<div class="product-box">
-		<?php if(have_rows('dannye_element')) : while(have_rows('dannye_element')) : the_row();?>
-		<div class="product-box__item">
-
-			<?php if(!empty(get_sub_field('dannye_element_nazvanie'))) :?>
-			<div class="product-box__item-text">
-			<?php the_sub_field('dannye_element_nazvanie');?>
+			<div class="device-block__img">
+				<?php
+				/**
+				 * Hook: woocommerce_before_single_product_summary.
+				 *
+				 * @hooked woocommerce_show_product_sale_flash - 10
+				 * @hooked woocommerce_show_product_images - 20
+				 */
+				do_action( 'woocommerce_before_single_product_summary' );
+				?>
+			
+				<?php if(!empty(get_field('czena_ot')) || !empty(get_field('czena_po_zaprosu')) || $product->price) :?>
+				<div class="device__price title">
+					
+					<div class="device__price-hide">
+							<?php
+						if(!empty(get_field('czena_ot'))){
+							the_field('czena_ot');
+						}
+						if(!empty(get_field('czena_po_zaprosu'))){
+							the_field('czena_po_zaprosu');
+						}
+						?>
+					</div>
+					
+					<div class="device__price-show">
+						<?php
+						if($product->price){
+							echo $product->price . ' ₽';
+						}else{
+							'';
+						}
+						
+						?> 
+						
+					</div>
+					
+				</div>
+				<?php endif;?>
 			</div>
-			<?php endif;?>
-
-			<?php if(!empty(get_sub_field('dannye_element_tekst'))) :?>
-			<div class="product-box__item-name">
-			<?php the_sub_field('dannye_element_tekst');?>
+			
+			
+			<div class="tests-block__form">
+				<div class="tests-block__form-title name">Оставить заявку</div>
+					<?php echo do_shortcode('[contact-form-7 id="bc1a5e1" title="Форма в продукте"]')?>
 			</div>
-			<?php endif;?>
 		</div>
-		<?php endwhile; endif;?>
+		<div class="product-box">
+			<?php if(have_rows('dannye_element')) : while(have_rows('dannye_element')) : the_row();?>
+			<div class="product-box__item">
+
+				<?php if(!empty(get_sub_field('dannye_element_nazvanie'))) :?>
+				<div class="product-box__item-text">
+				<?php the_sub_field('dannye_element_nazvanie');?>
+				</div>
+				<?php endif;?>
+
+				<?php if(!empty(get_sub_field('dannye_element_tekst'))) :?>
+				<div class="product-box__item-name">
+				<?php the_sub_field('dannye_element_tekst');?>
+				</div>
+				<?php endif;?>
+			</div>
+			<?php endwhile; endif;?>
+		</div>
 	</div>
 </section>
+
 	
-</div>
+
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
 
@@ -86,12 +119,17 @@ if ( post_password_required() ) {
 			<div class="tabs__content">
 				<div class="accreditation__inner-table">
 					<div class="accreditation__inner">
+					<?php echo $product->short_description;?>
 						<div class="accreditation__inner-scroll">
+					
 						<?php if(get_field('tablicza_dopolnitelnaya_informacziya'))
 						echo do_shortcode(get_field('tablicza_dopolnitelnaya_informacziya'));?> 
 						</div>
 						
-						<?php echo $product->short_description;?>
+						<div class="accreditation__inner-scroll-text">
+						<?php the_field('tabliczy_informacziya_tekst');?>
+						</div>
+						
 					</div>
 				</div>
 		  	</div>
